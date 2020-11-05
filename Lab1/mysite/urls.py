@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Django przekieruje wszystkie reguły z adresu 'http://127.0.0.1:8000/' do blog.urls i tam będzie szukał dalszych wskazówek.
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    # dla kazdego adresu zaczynajacego sie od admin django dopasuje odpowiedni widok
     path('admin/', admin.site.urls),
+    path('', include('blog.urls')),
 ]
