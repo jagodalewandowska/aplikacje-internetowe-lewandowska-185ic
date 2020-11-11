@@ -1,5 +1,7 @@
 # Lab 1
+
 ## Link do bloga: https://blog-lewandowska.herokuapp.com/  
+#### Do utworzenia bloga użyłam Django, a następnie został umieszczony na Heroku. 
 
 
 ---
@@ -28,7 +30,7 @@
 
 ---
 ### Ekran dodawania nowego posta
-##### Jeśli użytkownik jest zalogowany pod adresem strony/admin, możliwe jest dodawanie postów
+##### Jeśli użytkownik jest zalogowany pod adresem https://blog-lewandowska.herokuapp.com//admin, możliwe jest dodawanie postów w prawym górnym rogu strony.
 
 ![alt text](https://i.imgur.com/xFLBCE0.png)  
 
