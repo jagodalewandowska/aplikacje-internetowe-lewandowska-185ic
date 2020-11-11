@@ -1,5 +1,8 @@
 # Lab 1
+## Link do bloga: https://blog-lewandowska.herokuapp.com/  
 
+
+---
 ####
 ##### Wymagania dotyczące pierwszego zadania:
 ####
