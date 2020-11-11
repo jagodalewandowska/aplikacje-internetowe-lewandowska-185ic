@@ -48,7 +48,7 @@ Post widnieje na blogu:
 
 Po wciśnięciu na nagłówek wpisu i kliknięcie przycisku usunięcie:
 
-![alt text](blob:https://imgur.com/34fb52e9-ceba-423f-9d33-b514f81b5907)  
+![alt text](https://i.imgur.com/1m9gr11.png)  
 
 
 
