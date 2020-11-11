@@ -14,15 +14,19 @@
 # Zrzuty ekranów poszczególnych stron
 
 ### Strona główna
-##### Strona główna bloga zawiera wpisy, które można edytować lub usuwać po kliknięciu na ich tytuł.  
+##### Strona główna bloga zawiera wpisy. W przypadku bycia niezalogowanym, przycisk w górnym rogu nie jest widoczny.
 ####
 
+- Przed zalogowaniem:
+![alt text](https://i.imgur.com/uCwNDK7.png)  
+
+- Po zalogowaniu:
 ![alt text](https://i.imgur.com/j59VJR0.png)
 
 
 ---
 ### Edycja postów i usuwanie
-##### Strona zawiera dwa przyciski, które służą do edycji a także usuwania.
+##### Po kliknięciu na tytuł posta następuje przejście do edycji. Strona zawiera dwa przyciski, które służą do edycji a także usuwania.
 ####
 
 ![alt text](https://i.imgur.com/W8y8A9J.png)  
