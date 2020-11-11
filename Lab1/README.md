@@ -18,7 +18,7 @@
 ####
 
 - Przed zalogowaniem:
-![alt text](https://i.imgur.com/uCwNDK7.png)  
+![alt text](https://i.imgur.com/8sMBGNC.png)  
 
 - Po zalogowaniu:
 ![alt text](https://i.imgur.com/j59VJR0.png)
