@@ -1,7 +1,7 @@
 # Lab 1
 
 ## Link do bloga: https://blog-lewandowska.herokuapp.com/  
-#### Do utworzenia bloga użyłam Django, a następnie został umieszczony na Heroku. 
+#### Do utworzenia bloga użyłam Django, a następnie został on umieszczony na platfomie Heroku. 
 
 
 ---
@@ -22,7 +22,7 @@
 
 ---
 ### Edycja postów i usuwanie
-##### Strona zawiera dwa przyciski do edycji posta.  
+##### Strona zawiera dwa przyciski, które służą do edycji a także usuwania.
 ####
 
 ![alt text](https://i.imgur.com/W8y8A9J.png)  
