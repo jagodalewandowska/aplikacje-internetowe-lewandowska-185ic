@@ -8,19 +8,17 @@ from django.shortcuts import redirect
 def post_list(request):
     # sortowanie postów (QuerySet)
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    # request - wszystko, co otrzymujemy od użytkownika za pośrednictwem Internetu
     # blog/post_list.html - szablon
     # {} - jakie elementy można dodać do szablonu
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', {'posts':posts})
 
 # w przypadku braku postów zostanie wyświetlony błąd
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    return render(request, 'blog/post_detail.html', {'post':post})
 
 def post_new(request):
-    # 1 sytuacja - w przypadku dodania postu na pustej stronie
-    # 2 sytuacja - kiedy chcemy zobacyzć listę postów
+    # 1 sytuacja - w przypadku dodania postu na pustej stronie; 2 sytuacja - kiedy chcemy zobaczyć listę postów
     if request.method == "POST":
         # powstanie formularza z danymi
         form = PostForm(request.POST)

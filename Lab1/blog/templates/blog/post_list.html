@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+
 {% block content %}
     {% for post in posts %}
         <div class="post">
@@ -7,11 +8,10 @@
                 <p>published: {{ post.published_date }}</p>
             </div>
             <!-- tytul i link posta -->
-                        <!-- post_detail oczekuje na url w blog/urls.py o nazwie name=post_detail pk=post.pk primary key, 
-                        tworzony jest klucz -- rośnie o jeden przy rekordzie dodając pod pk dla każdego posta -->
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <!-- Zawartość, |linebreaksbr - przepuszczanie wpisów przez filtr: znacznik -> akapit -->
-            <p class="tekst">{{ post.text|linebreaksbr }}</p>
+                <!-- post_detail oczekuje na url w blog/urls.py o nazwie name=post_detail pk=post.pk primary key, 
+                tworzony jest klucz -- rośnie o jeden przy rekordzie dodając pod pk dla każdego posta -->
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}
