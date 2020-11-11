@@ -38,6 +38,19 @@
 
 ![alt text](https://i.imgur.com/xFLBCE0.png)  
 
+- Dodanie nowego posta
+
+![alt text](https://i.imgur.com/13VmDoc.png)  
+
+Post widnieje na blogu:  
+
+![alt text](https://i.imgur.com/5IsfFRB.png)  
+
+Po wciśnięciu na nagłówek wpisu i kliknięcie przycisku usunięcie:
+
+![alt text](blob:https://imgur.com/34fb52e9-ceba-423f-9d33-b514f81b5907)  
+
+
 
 ---
 ### Panel administratora
