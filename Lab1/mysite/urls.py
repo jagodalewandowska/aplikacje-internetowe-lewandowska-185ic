@@ -1,5 +1,5 @@
+  
 """mysite URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
@@ -13,12 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# Django przekieruje wszystkie reguły z adresu 'http://127.0.0.1:8000/' do blog.urls i tam będzie szukał dalszych wskazówek.
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # dla kazdego adresu zaczynajacego sie od admin django dopasuje odpowiedni widok
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
+    # przekierowanie reguł z naszegu adresu do blog.urls
+    path('',include('blog.urls')),
 ]

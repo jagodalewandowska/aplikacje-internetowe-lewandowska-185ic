@@ -6,7 +6,7 @@ class Post(models.Model):
     # foreignKey - odnosnik do innego modelu
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     # tekst z ograniczona iloscia znakow
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=300)
     # bez ograniczen tekst
     text = models.TextField()    
     created_date = models.DateTimeField(

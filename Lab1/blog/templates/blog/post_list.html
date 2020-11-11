@@ -1,22 +1,17 @@
-<html>
-    <head>
-        <title>Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Blog</a></h1>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <!-- data publikacji -->
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <!-- tytul i link posta -->
+                        <!-- post_detail oczekuje na url w blog/urls.py o nazwie name=post_detail pk=post.pk primary key, 
+                        tworzony jest klucz -- rośnie o jeden przy rekordzie dodając pod pk dla każdego posta -->
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <!-- Zawartość, |linebreaksbr - przepuszczanie wpisów przez filtr: znacznik -> akapit -->
+            <p class="tekst">{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

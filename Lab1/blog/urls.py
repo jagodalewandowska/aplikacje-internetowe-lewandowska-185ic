@@ -1,10 +1,14 @@
-# Tutaj importujemy funkcje path Django i wszystkie nasze widoki (views) z aplikacji blog. 
 from django.urls import path
 from . import views
 
-#  przyporządkowujemy widok (view) o nazwie post_list do strony głównej. 
-# Ten wzorzec URL zostanie dopasowany do pustego ciągu znaków, a Django zignoruje nazwę domeny (np. http://127.0.0.1:8000/)
-# name='post_list jest nazwą URL, która będzie używana do zidentyfikowania widoku
+# przypisanie widoku o nazwie post do strony głównej
+
 urlpatterns = [
     path('', views.post_list, name='post_list'),
+    # post/ url zaczyna się słowem post /
+    # <int:pk> oczekiwanie na liczbę całkowitą, przekazanie do widoku jako pk
+    path('post/<int:pk>', views.post_detail, name='post_detail'),
+    path('post/new', views.post_new, name='post_new'),
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+    path('post/<pk>/remove/', views.post_remove, name='post_remove'),
 ]

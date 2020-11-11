@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>Mój pierwszy blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bevan&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <body>        
+            <div class="page-header">
+                {% if user.is_authenticated %}
+                <!-- dodawanie postów tylko przez administratora -->
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Dodaj nowy wpis</a>
+                {% endif %}
+                <h1><a href="{% url 'post_list' %}">Blog z cytatami kompozytorów</a></h1>
+            </div>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12 text-justify">
+                        <!-- miejsce wstawienia html z innego szablonu -->
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </body>
+    </body>
+</html>
