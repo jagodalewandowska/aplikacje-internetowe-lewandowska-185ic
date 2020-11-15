@@ -17,15 +17,16 @@ from django.contrib import admin
 # dodanie ścieżki include
 from django.urls import path, include
 # aktualizacja by móc wyświetlać stronę główną; import wyświetlania szablonu
+# zawiera login, logout, zmiana hasła + done, resetowanie hasła + done, potwierdzenie
 from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # muszą być powyżej, aby django szukał accounts jako pierwsze
-    path('accounts/', include('accounts.urls')),
-    # zawiera login, logout, zmiana hasła + done, resetowanie hasła + done, potwierdzenie
+    path('accounts/', include('accounts.urls')),    
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/home', TemplateView.as_view(template_name='home.html')),
     # wyświetlanie strony głównej
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]

@@ -1,14 +1,38 @@
 {% extends 'base.html' %}
 
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<body onload="startTime()"></body>
     {% if user.is_authenticated %}
-        Hi {{ user.username }}!
+        Hi {{ user.username }}! <br>
+        Jest godzina <p id="txt"></p>
         <p><a href="{% url 'logout' %}">Log Out</a></p>
+        <a href="{% url 'change_password' %}" class="btn-outline-secondary btn-sm">Change password</a>
     {% else %}
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">Log In</a><br>
-        <a href="{%url 'signup' %}">Sign up</a>
+        <a href="{% url 'signup' %}">Sign up</a>
     {% endif %}
+
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
 {% endblock %}
+
