@@ -3,10 +3,11 @@
 {% block title %} Password has been changed {% endblock title %}
 
 {% block content %}
-  <h2> Password has been changed </h2>
-  <br>
-  <div>
-    <p> Twoje hasło zostało zmienione. </p>
-    <a href="{% url 'home' %}" class="btn-outline-secondary btn-sm"> Powrót do strony głównej. </a>
-  </div>
+<div class="text-center" style="font-family:'Bevan'">
+    <h3> Password has been changed </h3><hr>
+      <p> Twoje hasło zostało zmienione. </p>
+      <a href="{% url 'home' %}"> Powrót do strony głównej  </a>
+</div>
+  
+
 {% endblock content %}
