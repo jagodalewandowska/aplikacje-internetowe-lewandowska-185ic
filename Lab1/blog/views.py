@@ -4,9 +4,6 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
-# wymaganie logowania by dodać post
-from django.contrib.auth.decorators import login_required
-
 
 # pobieranie request i zwracanie wartości -- blog/post_list.html
 def post_list(request):
@@ -21,7 +18,6 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post':post})
 
-@login_required
 def post_new(request):
     # 1 sytuacja - w przypadku dodania postu na pustej stronie; 2 sytuacja - kiedy chcemy zobaczyć listę postów
     if request.method == "POST":
