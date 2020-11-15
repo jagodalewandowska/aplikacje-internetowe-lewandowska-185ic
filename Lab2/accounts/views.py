@@ -13,7 +13,7 @@ class SignUpView(generic.CreateView):
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
-    success_url = reverse_lazy('changed-successfully')
+    success_url = reverse_lazy('changed_successfully')
 
 def changed(request):
-    return render(request, 'registration/changed-successfully.html', {})
+    return render(request, 'registration/changed_successfully.html', {})
