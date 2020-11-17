@@ -13,7 +13,7 @@
 
 # Zrzuty ekranów poszczególnych stron
 
-### Strona główna
+## Strona główna
 ##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również pasek nawigacji, z którego można przejść do mojego Githuba.
 ####
 
@@ -23,7 +23,7 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-### Rejestracja użytkownika
+## Rejestracja użytkownika
 ##### Po kliknięciu na przycisk zarejestruj się widnieje następujące okno. Tworzę użytkownika **Jagoda**:
 ####
 
@@ -31,7 +31,7 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-### Logowanie
+## Logowanie
 ##### Przeniesienie do ekranu logowania - wpisuję dane:
 ####
 
@@ -40,14 +40,14 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-### Ekran zalogowanego użytkownika
+## Ekran zalogowanego użytkownika
 ##### Na stronie głównej możliwe jest teraz wylogowanie się, a także zmiana hasła. 
 
 ![alt text](https://i.imgur.com/LRrEygV.png)
 
 
 ---
-### Zmiana hasła
+## Zmiana hasła
 ##### Należy podać stare hasło, a następnie dwukrotnie nowe. 
 
 ![alt text](https://i.imgur.com/Mt7nWKM.png)  
