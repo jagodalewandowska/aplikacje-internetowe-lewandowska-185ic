@@ -14,10 +14,10 @@
 # Zrzuty ekranów poszczególnych stron
 
 ### Strona główna
-##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również nagłówek, z którego można przejść do mojego Githuba.
+##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również pasek nawigacji, z którego można przejść do mojego Githuba.
 ####
 
-- Zrzut ekranu w przypadku niezalogowanego użytkownika:
+Zrzut ekranu w przypadku niezalogowanego użytkownika:
 ![alt text](https://i.imgur.com/xVmI5qg.png)  
 
 
