@@ -25,6 +25,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'fp5a62406d)f@2#&o^6*swn%w5qmqk7*gv()&js5pe+2603=v#'
 
 # Application definition
 
@@ -126,3 +128,5 @@ LOGIN_REDIRECT_URL = 'home'
 
 # Przekierowanie do strony głównej po wylogowaniu
 LOGOUT_REDIRECT_URL = 'home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

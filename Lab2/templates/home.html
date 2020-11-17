@@ -9,11 +9,12 @@
         {% if user.is_authenticated %}
         <p class="card-header">Dzień dobry,   {{ user.username }}</p>
         <p class="card-body"><a href="{% url 'logout' %}">Wyloguj się</a><br>
-        <a href="{% url 'change_password' %}">Zmień hasło</a></p>
+        <a href="{% url 'change_password' %}">Zmień hasło</a></p>        
         {% else %}
         <p class="card-header">Nie jesteś zalogowany.</p>
         <p class="card-body"><a href="{% url 'login' %}">Zaloguj się</a><br>
-        <a href="{% url 'signup' %}">Zarejestruj się</a></p>
+        <a href="{% url 'signup' %}">Zarejestruj się</a></p>    
+        <a href="{% url 'password_reset'%}">Reset hasła</a>    
     {% endif %}
     </div>  
 </div>
