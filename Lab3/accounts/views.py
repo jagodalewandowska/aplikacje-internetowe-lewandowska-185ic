@@ -4,7 +4,6 @@ from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import UserRegistrationForm
-from .models import Profile
 
 # dla wszystkich klas urls nie są ładowane podczas importowania, dlatego uzywamy lazy żeby załadować je kiedy będą dostępne
 
@@ -26,15 +25,13 @@ def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
-            # Create a new user object but avoid saving it yet
+            # Tworzenie użytkownika bez zapisu
             new_user = user_form.save(commit=False)
-            # Set the chosen password
+            # Wybierz hasło
             new_user.set_password(
                 user_form.cleaned_data['password'])
-            # Save the User object
+            # Zapisanie użytkownika
             new_user.save()
-            # Create the user profile
-            Profile.objects.create(user=new_user)
             return render(request,
                           'registration/register_done.html',
                           {'new_user': new_user})

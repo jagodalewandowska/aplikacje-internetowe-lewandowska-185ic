@@ -89,6 +89,7 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 ## Po dodaniu na Heroku
 
 <details>
+<summary>Więcej szczegółów</summary>
 ### Strona główna
 ![alt text](https://i.imgur.com/6BWNsHj.png)  
 
