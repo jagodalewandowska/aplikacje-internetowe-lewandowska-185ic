@@ -23,34 +23,34 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-## Rejestracja użytkownika
-##### Po kliknięciu na przycisk zarejestruj się widnieje następujące okno. Tworzę użytkownika **Jagoda**:
+## Rejestracja użytkownika za pomocą adresu e-mail
+##### Po kliknięciu na przycisk zarejestruj się widnieje następujące okno. Tworzę użytkownika **JagodaTest wraz z adresem e-mail**:
 ####
 
-![alt text](https://i.imgur.com/JF8pC07.png)  
+![alt text](https://i.imgur.com/gDeckDs.png)  
 
 
 ---
-## Logowanie
-##### Przeniesienie do ekranu logowania - wpisuję dane:
+## Ekran po poprawnej rejestracji
+##### Możliwość przejścia do ekranu logowania
 ####
 
-![alt text](https://i.imgur.com/wqLQAhT.png)  
+![alt text](https://i.imgur.com/1c5DzDT.png)  
 
 
 
 ---
-## Ekran zalogowanego użytkownika
-##### Na stronie głównej możliwe jest teraz wylogowanie się, a także zmiana hasła. 
+## Ekran logowania
+##### Logowanie za pomocą utworzonego użytkownika
 
-![alt text](https://i.imgur.com/LRrEygV.png)
+![alt text](https://i.imgur.com/0qBexoO.png)
 
 
 ---
-## Zmiana hasła
-##### Należy podać stare hasło, a następnie dwukrotnie nowe. 
+## Ekran główny po zalogowaniu się nowego użytkownika
+##### Możliwość zmiany hasła oraz wylogowania się
 
-![alt text](https://i.imgur.com/Mt7nWKM.png)  
+![alt text](https://i.imgur.com/tHFFeGX.png)  
 
 #### Po zmianie hasła widnieje następujące okno:
 
