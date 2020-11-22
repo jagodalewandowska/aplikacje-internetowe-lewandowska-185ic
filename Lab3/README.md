@@ -122,4 +122,13 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ### Po zalogowaniu
-![alt text](https://i.imgur.com/Co98n4B.png)
+![alt text](https://i.imgur.com/Co98n4B.png)  
+
+
+### W panelu administratora, kolejno:
+
+- administrator
+- konto github
+- konto facebook
+
+![alt text](https://i.imgur.com/vwbnVUu.png)
