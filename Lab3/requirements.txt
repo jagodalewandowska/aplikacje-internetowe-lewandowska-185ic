@@ -5,3 +5,5 @@ social-auth-app-django
 social-auth-core==3.3.3
 python-social-auth
 python-decouple==3.1
+dj-database-url 
+psycopg2
