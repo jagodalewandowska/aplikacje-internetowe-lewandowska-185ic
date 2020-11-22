@@ -14,7 +14,7 @@
 # Zrzuty ekranów poszczególnych stron
 
 ## Strona główna - Localhost
-<details>
+
 ##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również pasek nawigacji, z którego można przejść do mojego Githuba. Do zadania 3 dodane zostały przyciski rejestracji za pomocą e-mail, a także Githuba oraz Facebook.
 ####
 
@@ -84,12 +84,11 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-</details>
 
 ## Po dodaniu na Heroku
 
 <details>
-<summary>Więcej szczegółów</summary>
+<summary>Zrzuty ekranów po dodaniu na Heroku</summary>
 ### Strona główna
 ![alt text](https://i.imgur.com/6BWNsHj.png)  
 
