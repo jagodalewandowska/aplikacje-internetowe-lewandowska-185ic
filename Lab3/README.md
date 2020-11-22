@@ -86,7 +86,7 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 ---
 </details>
 
-# Po dodaniu na Heroku
+## Po dodaniu na Heroku
 
 <details>
 ### Strona główna
