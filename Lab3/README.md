@@ -83,39 +83,39 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
-## Po dodaniu na Heroku
+# Po dodaniu na Heroku
 
-- Strona główna
+### Strona główna
 ![alt text](https://i.imgur.com/6BWNsHj.png)  
 
 
-- Tworzenie użytkownika
+### Tworzenie użytkownika
 ![alt text](https://i.imgur.com/jtTOTfI.png)  
 
 
-- Rejestracja pomyślna
+### Rejestracja pomyślna
 ![alt text](https://i.imgur.com/fAtBo5r.png)    
 
 
-- Logowanie się nowego użytkownika
+### Logowanie się nowego użytkownika
 ![alt text](https://i.imgur.com/HMi2LC7.png)    
 
 
-- Ekran po zalogowaniu
+### Ekran po zalogowaniu
 ![alt text](https://i.imgur.com/xNmSyZM.png)    
 
 
-- Logowanie przez **Github**
+### Logowanie przez **Github**
 ![alt text](https://i.imgur.com/ztMO7nc.png)    
 
 
-- Po zalogowaniu
+### Po zalogowaniu
 ![alt text](https://i.imgur.com/r38Nlpw.png)    
 
 
-- Logowanie przez **Facebook**
+### Logowanie przez **Facebook**
 ![alt text](https://i.imgur.com/gkYFMlR.png)    
 
 
-- Po zalogowaniu
+### Po zalogowaniu
 ![alt text](https://i.imgur.com/Co98n4B.png)
