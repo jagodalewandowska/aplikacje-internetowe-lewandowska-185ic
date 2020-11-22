@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- metoda post do wysyłania danych, csrf a by zabezpieczyć przed atakami -->
+<div class="text-center" style="font-family:'Bevan'">        
+    {% if user.is_authenticated %}
+    <div class="card-header" style="font-family:'Bevan'">Dzień dobry,   {{ user.username }}</p>
+    <p class="card-body"><a href="{% url 'logout' %}">Wyloguj się</a><br>
+    <a href="{% url 'change_password' %}">Zmień hasło</a></p>        
+    {% else %}
+    <p class="card-header">Nie jesteś zalogowany.</p>
+    <div>
+    <div class="card-body">
+        <!-- Logowanie się -->
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-info">Zaloguj się</button></a><hr>
+        <!-- Rejestracja -->
+        <a href="{% url 'signup' %}">Zarejestruj się za pomocą loginu </a> <br>
+        <a href="{% url 'register' %}"> Zarejestruj się za pomocą adresu e-mail</a><hr>
+        <!-- Social media -->
+        Zaloguj się za pomocą innych portali: <br>
+        <a href="{% url 'social:begin' 'facebook' %}"><button class="btn btn-primary">Sign in with Facebook</button></a></button>
+        <a href="{% url 'social:begin' 'github' %}"><button class="btn btn-danger">Sign in with Github</button></a><hr>
+        <!-- Resetowanie hasła -->
+        Zapomniałeś hasła?<br>    
+        <a href="{% url 'password_reset'%}">Resetowanie hasła</a><br>
+    </div>
+    
+    
+{% endif %}
+</div> 
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header text-center" style="font-family:'Bevan'"><h2>Załóż konto</h2></div>
+    <!-- metoda post do wysyłania danych, csrf a by zabezpieczyć przed atakami -->
+    <div class="card-body text-center" style="font-family:'Bevan'">        
+        <p>Wypełnij formularz:</p>
+        <form action="." method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Załóż konto"></p>
+        </form>
+    </div>  
+</div>  
+
+{% endblock %}
