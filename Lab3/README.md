@@ -52,26 +52,31 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 ![alt text](https://i.imgur.com/tHFFeGX.png)  
 
-#### Po zmianie hasła widnieje następujące okno:
-
-![alt text](https://i.imgur.com/chv3suk.png)
-
-#### Przenoszę się do stony głównej, z której mogę się wylogować.
 
 ---
-### Resetowanie hasła
-##### Na stronie podaję adres e-mail.
+### Logowanie za pomocą Facebook
+##### Przycisk Sign in with Facebook
 
-![alt text](https://i.imgur.com/Vt4jBst.png)  
+![alt text](https://i.imgur.com/muSB8Hv.png)  
 
-##### Otrzymuję link do resetowania hasła w konsoli:
+##### Po zalogowaniu:
 
-![alt text](https://i.imgur.com/JxCuRv5.png)  
+![alt text](https://i.imgur.com/49gpdQD.png)  
 
-##### Podaję nowe hasło oraz je potwierdzam.
 
-![alt text](https://i.imgur.com/QGG02L9.png)  
+---
+### Logowanie za pomocą Github
+##### Przycisk Sign in with Github
 
-##### Po zatwierdzeniu widoczne okno, z którego można przejść do logowania.
+![alt text](https://i.imgur.com/aSYRTXg.png)  
 
-![alt text](https://i.imgur.com/BY7Z7E3.png)
+##### Po zalogowaniu:
+
+![alt text](https://i.imgur.com/eel3sQj.png)  
+
+
+---
+### Widok nowych użytkowników w panelu administratora
+##### Użytkownicy dodani za pomocą adresu e-mail, github oraz facebook
+
+![alt text](https://i.imgur.com/yFKFuZ7.png)  
