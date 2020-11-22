@@ -15,7 +15,7 @@
 
 ## Strona główna - Localhost
 
-##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również pasek nawigacji, z którego można przejść do mojego Githuba. Do zadania 3 dodane zostały przyciski rejestracji za pomocą e-mail, a także Githuba oraz Facebook.
+##### Strona główna zawiera poniższy widok, w zależności, czy użytkownik jest lub nie jest zalogowany. Jest również pasek nawigacji, z którego można przejść do mojego Githuba. Do zadania 3 dodane zostały przyciski rejestracji za pomocą e-mail, a także Githuba oraz Facebook. W drugiej części pliku Readme znajdują się zrzuty ekranu w przypadku dodania na Heroku.
 ####
 
 Zrzut ekranu w przypadku niezalogowanego użytkownika:
@@ -84,11 +84,11 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 
 ---
+---
 
-## Po dodaniu na Heroku
+# Po dodaniu na Heroku
 
-<details>
-<summary>Zrzuty ekranów po dodaniu na Heroku</summary>
+
 ### Strona główna
 ![alt text](https://i.imgur.com/6BWNsHj.png)  
 
@@ -123,4 +123,3 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 
 ### Po zalogowaniu
 ![alt text](https://i.imgur.com/Co98n4B.png)
-</details>
