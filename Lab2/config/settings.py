@@ -24,6 +24,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','auth-lewandowska.herokuapp.com']
 
+SECRET_KEY = '2-a#frzyfp%(rz*kh-g!5lg+dv@=e8*$ndwy0q4mc0z8=s^w17'
+
 # Application definition
 
 INSTALLED_APPS = [
