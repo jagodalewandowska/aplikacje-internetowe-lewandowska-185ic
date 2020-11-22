@@ -130,5 +130,6 @@ Zrzut ekranu w przypadku niezalogowanego użytkownika:
 - administrator
 - konto github
 - konto facebook
+- konto założone poprzez adres e-mail
 
 ![alt text](https://i.imgur.com/vwbnVUu.png)
