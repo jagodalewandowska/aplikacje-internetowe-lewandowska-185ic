@@ -1,4 +1,4 @@
-# Lab 4 - REST API z DRF
+# Lab 4
 
 Wykorzystanie Django REST Framework. Dodanie Swaggera.
 
