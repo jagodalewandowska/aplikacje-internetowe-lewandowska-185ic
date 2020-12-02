@@ -112,16 +112,23 @@ router.register('', PostViewSet, basename='posts')
 urlpatterns = router.urls
 ```
 
+Dodane one również zostały w przypadku aplikacji drugiej - Movies. Dzięki niej można wyświetlać odpowiednie filmy po ich id bez dodawania wcześniejszego fragmentu kodu.
+
+![alt text](https://i.imgur.com/ZHgjDAB.png)
+
 ## Swagger
 
 W zadaniu wymagane było również dodanie Swaggera, który umożliwia dokładnie badanie elementów utworzonych przy pomocy REST API. Dostępne są następujące ścieżki, opisane również w kodzie:
-- /swagger.json to widok json
+
+- **/swagger.json** to widok json
 
 ![alt text](https://i.imgur.com/FcprWWh.png)
 
-- /swagger.yaml to widok yaml
+- **/swagger.yaml** to widok yaml, pobrany plik przy przejściu do strony:
 
-- /redoc to widok redoc
+![alt text](https://i.imgur.com/p7o9YvH.png)
+
+- **/redoc** to widok redoc
 
 ![alt text](https://i.imgur.com/bccJRbt.png)
 Wszystkie informacje na temat utworzonych obiektów i struktur są dokładnie podane. Przykład dla tworzenia nowego postu i odpowiedzi:
@@ -132,10 +139,113 @@ Przykłady dla drugiej części zadania, którą było utworzenie własnej aplik
 
 ![alt text](https://i.imgur.com/lqBx0LF.png)
 
-- /swagger to widok swagger ui
+- **/swagger** to widok swagger ui
 
 ![alt text](https://i.imgur.com/pDmKx31.png)
 
-Widok modeli Post, Genre oraz Movie, które należą do aplikacji drugiej -- tej utworzonej przeze mnie, do której przejdę w dalszej części Readme.
+Widok modeli **Post**, **Genre** oraz **Movie**, które należą do aplikacji drugiej -- tej utworzonej przeze mnie, do której przejdę w dalszej części Readme.
 
 ![alt text](https://i.imgur.com/irs9A2i.png)
+
+
+## Serializery
+
+Serializery służą do zarządzania zawartością wyświetlaną dla użytkownika. Dla przykładu mając listę postów, można zdeklarować, że dana wartość nie ma być wyświetlana. Utworzony obiekt wraz z komentarzem wygląda następująco:
+```
+# include - czyli zawarte będą id, autor, tytuł, post, kiedy utworzono
+# exclude - updated_at nie jest zawarte w fields
+        fields = ('id', 'author', 'title', 'body', 'created_at',)
+```
+Dlatego w liście widać tylko id, autor, tytuł ... ale nie **updated_at**.
+
+![alt text](https://i.imgur.com/SwWdS4k.png)  
+
+
+
+
+---
+# Własna aplikacja Movies
+
+Aplikacja zawiera Obiekty Genre - które przy tworzeniu Movies można wykorzystywać z listy, dodając nową pozycję. Stan początkowy to:
+
+![alt text](https://i.imgur.com/GinUapw.png)
+
+A także listę 12 filmów, które mają nadane wartości z obiektu gatunek.
+
+![alt  text](https://i.imgur.com/XpuqKdn.png)
+
+Zezwolenia ustawiłam tak, aby tylko administrator mógł zarządzać obiektami typu Gatunek.
+
+- Widok **użytkownika niezalogowanego** - który nie może przeglądać gatunków, ale może widzieć filmy, lecz ich nie dodawać.
+
+![alt text](https://i.imgur.com/VKMgHL6.png)
+
+Brak uprawnień do dodawania filmów:
+
+![alt text](https://i.imgur.com/iDdC6a2.png)
+
+- Widok użytkownika **Magdalena**
+
+![alt text](https://i.imgur.com/TjehWc3.png)
+
+- Widok **administratora** - Jagoda
+
+![alt text](https://i.imgur.com/mj8SCnB.png)
+
+## Dodawanie nowego gatunku oraz filmu
+
+Dodawanie nowego gatunku jako administrator:
+
+![alt text](https://i.imgur.com/V6NByCI.png)
+
+Dodawanie nowego filmu:
+
+![alt text](https://i.imgur.com/smmP2GY.png)
+
+
+## Serializery dla aplikacji Movies
+
+Wyświetlane są wszystkie atrybuty:
+
+![alt text](https://i.imgur.com/foHzCn7.png)
+
+Można by było zastosować formę exclude i usuwając np. producer z listy nie byłby już on wyświetlany.
+
+## Viewset 
+
+Viewset jaki stworzyłam dla nowej aplikacji to ten wyświetlający listę filmów o nazwie MovieViewSet. Obiekty typu ViewSet nie posiadają metod takich jak get() czy post(), ale posiadają list() oraz create().
+
+![alt text](https://i.imgur.com/wHkCdz1.png)
+
+Dzięki temu wykorzystałam w późniejszym kroku ten widok w tworzeniu route:
+
+```
+...
+router = SimpleRouter()
+router.register('', MovieViewSet, basename='movieset')
+
+urlpatterns += router.urls
+...
+```
+
+## Sortowanie i filtrowanie, oraz wyszukiwanie
+
+Aby uporządkować filmy względem ich oceny wybrana opcja to review - ascending.
+
+![alt text](https://i.imgur.com/U8jRuOY.png)
+
+Posortowane filmy wraz z rosnącą oceną:
+
+![alt text](https://i.imgur.com/SCLxuQw.png)
+
+Wyszukiwanie tylko filmów Star Wars:
+
+![alt text](https://i.imgur.com/yQ4uOLc.png)
+
+Filmy Star Wars:
+
+![alt text](https://i.imgur.com/qDNhjWt.png)
+
+Filmy można filtrować ze względu na ocenę, gatunek, producenta i reżysera. Przykład dla filmów Musical - ich id ma wartość 8.
+
+![alt text](https://i.imgur.com/kMD5PC3.png)
