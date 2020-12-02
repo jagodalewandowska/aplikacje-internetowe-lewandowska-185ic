@@ -7,7 +7,7 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
-
+# film
 class Movie(models.Model):    
     name = models.CharField(max_length=200)
     genre = models.ForeignKey('Genre', on_delete=models.CASCADE)

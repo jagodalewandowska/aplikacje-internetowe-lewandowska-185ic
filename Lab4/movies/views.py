@@ -26,7 +26,7 @@ class MovieList(generics.ListCreateAPIView):
     # Lista oraz tworzenie filmów
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
     # filtrowanie
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -39,7 +39,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     # Lista oraz tworzenie filmów
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
 
 
