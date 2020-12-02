@@ -12,7 +12,7 @@ Wykorzystanie Django REST Framework. Dodanie Swaggera.
 ---
 # Realizacja kodu z zajeć wraz z małymi modyfikacjami
 
-Jedną z dwóch utworzonych aplikacji w projekcie to posts. Do analizy rozpoczynam od obiektu PostList. To tutaj widnieją wszystkie posty, a także jest możliwe dodawanie nowych. Jeśli użytkownik jest niezalogowany nie są wyświetlane żadne z istniejących elementów. Podląg dodanych postów w panelu administratora:
+Jedną z dwóch utworzonych aplikacji w projekcie to posts. Do analizy rozpoczynam od PostList. To tutaj widnieją wszystkie posty, a także jest możliwe dodawanie nowych. Jeśli użytkownik jest niezalogowany nie są wyświetlane żadne z istniejących elementów. Podląg dodanych postów w panelu administratora:
 
 ![alt text](https://i.imgur.com/n7nPXtN.png)
 
