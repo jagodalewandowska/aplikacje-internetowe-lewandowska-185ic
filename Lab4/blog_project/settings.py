@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 
     # Dodanie posts do listy aplikacji
     'posts.apps.PostsConfig',
+
+    # swagger
+    'drf_yasg',
 ]
 
 # Ustawianie domyślnych ustawień

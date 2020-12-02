@@ -1,10 +1,9 @@
-# import zezwoleń z dhabgi rest
+# import zezwoleń z django rest
 from rest_framework import permissions
 
 # overriding metodę hasobjectpermission tak,
 # aby pozwolić temu samemu użytkownikowi na edytowanie 
 # lub usuwanie jeśli jest właścicielem posta
-
 
 # utworzenie własnej klasy, która rozszerza basepermission
 class IsAuthorOrReadOnly(permissions.BasePermission):
