@@ -12,7 +12,7 @@
 
 ##### Pierwszą stroną jest strona PostList. Na niej widnieją wszystkie posty, a także jest możliwe dodawanie nowych. Jeśli użytkownik jest niezalogowany nie są wyświetlane żadne z istniejących elementów.
 
-### Zezwolenia - permissions
+## Zezwolenia - permissions
 
 1. ### Użytkownik niezalogowany
 
@@ -35,7 +35,7 @@ Dzięki użyciu routers, możliwe jest pominięcie zapisu:
  path('<int:pk>/', PostDetail.as_view()),
 ```
 
-od teraz, możliwe jest przejście do wybranego posta dopisując jego id po "/". Dostęp do poszczególnych elementów strony jest znacznie ułatwiony, jednocześnie kod staję się zdecydowane bardziej przejrzysty.
+Od teraz, możliwe jest przejście do wybranego posta dopisując jego id po "/". Dostęp do poszczególnych elementów strony jest znacznie ułatwiony, jednocześnie kod staję się zdecydowane bardziej przejrzysty.
 
 Wyświetlenie drugiego posta:
 
