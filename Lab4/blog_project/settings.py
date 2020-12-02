@@ -45,8 +45,14 @@ INSTALLED_APPS = [
     # Dodanie posts do listy aplikacji
     'posts.apps.PostsConfig',
 
+    # Dodanie movies do listy aplikacji
+    'movies.apps.MoviesConfig',
+
     # swagger
     'drf_yasg',
+
+    # Filtrowanie
+    'django_filters',
 ]
 
 # Ustawianie domyślnych ustawień
@@ -59,7 +65,11 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    # aby móc filtrować - dodanie backendu
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
 }
 
 MIDDLEWARE = [
