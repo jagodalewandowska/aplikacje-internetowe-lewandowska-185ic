@@ -1,14 +1,14 @@
 from django.conf.urls import url
-from .views import GenreList, MovieList, MovieViewSet
+from .views import GenreList, MovieViewSet
 from rest_framework.routers import SimpleRouter
 
 urlpatterns = [
     url(r'^genres/$', GenreList.as_view()),
-    url(r'^movies/$', MovieList.as_view()),
+    # url(r'^movies/$', MovieList.as_view()),
 ]
 
-# aby móc wyświetlać movies/1, movies/2, 
-# ... bez używania <int:pk>/, api/v2/2 ...
+# aby móc wyświetlać api/v2/2
+# ... bez używania <int:pk>/
 router = SimpleRouter()
 router.register('', MovieViewSet, basename='movieset')
 
