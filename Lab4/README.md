@@ -1,17 +1,16 @@
 # Lab 4
 
 ## REST API z DRF
-#### Do utworzenia strony użyłam Django API Rest. 
 
-
----
 ####
 ##### Wymagania dotyczące czwartego zadania:
 ####
 
 ![alt text](https://i.imgur.com/TwbYQN0.png)  
 
-# Realizacja kodu z zajeć wraz z małymi odyfikacjami
+
+---
+# Realizacja kodu z zajeć wraz z małymi modyfikacjami
 
 ##### Pierwszą stroną jest strona PostList. Na niej widnieją wszystkie posty, a także jest możliwe dodawanie nowych. Jeśli użytkownik jest niezalogowany nie są wyświetlane żadne z istniejących elementów.
 
