@@ -9,7 +9,8 @@ from rest_framework import permissions
 class IsAuthorOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
 
-        # zezwolenie tylko do odczytu na zapytanie
+        # zezwolenie tylko do odczytu na zapytanie,
+        # read only tylko dla użytkowników zalogowanych
         if request.method in permissions.SAFE_METHODS:
             return True
 

@@ -10,7 +10,10 @@ from .serializers import GenreSerializer, MovieSerializer
 
 # Import filtrowania
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter, OrderingFilter
 
+# Import viewsets
+from rest_framework import viewsets
 
 class GenreList(generics.ListCreateAPIView):
     # Lista oraz tworzenie nowych gatunków
@@ -26,8 +29,17 @@ class MovieList(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticated, )
 
     # filtrowanie
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['review', 'genre', 'director', 'producer']
+    search_fields = ['review','director','name']
+    ordering_fields =['title', 'review', 'director']
+
+# Wyświetlanie danego filmu
+class MovieViewSet(viewsets.ModelViewSet):
+    # Lista oraz tworzenie filmów
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    permission_classes = (permissions.IsAuthenticated, )
 
 
 

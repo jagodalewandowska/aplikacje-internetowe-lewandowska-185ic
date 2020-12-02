@@ -14,8 +14,14 @@ from .permissions import IsAuthorOrReadOnly
 # Import filtrowania
 from django_filters.rest_framework import DjangoFilterBackend
 
+# Import Search
+from rest_framework.filters import SearchFilter
+
+# Import viewsets
+from rest_framework import viewsets
+
 # Wyświetlanie wszystkich postów na blogu
-class PostList(generics.ListCreateAPIView):
+class PostViewSet(viewsets.ModelViewSet):
     # zezwolenia tylko dla wybranych użytkowników -> permission_classes = (permissions.IsAuthenticated,)
 
     # wyświetlanie wszystkich postów, serializer
@@ -23,9 +29,10 @@ class PostList(generics.ListCreateAPIView):
     serializer_class = PostSerializer
 
     # filtrowanie
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['created_at','updated_at','author']
 
+'''
 # Aby udostępniać dodawanie, aktualizowanie oraz usuwanie postów
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     # dodanie własnych zezwoleń
@@ -34,3 +41,4 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     # jak wyżej
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+'''
