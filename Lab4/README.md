@@ -1,6 +1,4 @@
-# Lab 4
-
-## REST API z DRF
+# Lab 4 - REST API z DRF
 
 ####
 ##### Wymagania dotyczące czwartego zadania:
