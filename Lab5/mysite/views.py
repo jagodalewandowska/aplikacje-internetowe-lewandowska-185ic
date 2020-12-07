@@ -20,6 +20,6 @@ def dj_bs(request):
         soup = BeautifulSoup(source, 'html.parser')
         h1_val = soup.h1.string #h1 value
 
-        return render(request, 'templates/django-bs.html', {'h1_val':h1_val})
+        return render(request, 'scraping.html', {'h1_val':h1_val})
 
-    return render(request, 'templates/django-bs.html')
+    return render(request, 'scraping.html')

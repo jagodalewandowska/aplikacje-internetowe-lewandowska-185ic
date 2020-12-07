@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <html>
+        <head>
+            <title>Web Scraping</title>
+        </head>
+        <body>
+            <form action="{% url 'scraping' %}", method="POST">
+                {% csrf_token %}
+                <input type="text" name="web_link">
+                <input type="submit" name="submit">
+        <!-- output -->
+            <div class="output">
+                <h2>{{h1_val}}</h2>
+            </div>
+        </body>
+    </html>
+{% endblock %}
