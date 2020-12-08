@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <html>
         <head>
             <title>Web Scraping</title>
@@ -10,9 +11,13 @@
                 {% csrf_token %}
                 <input type="text" name="web_link">
                 <input type="submit" name="submit">
+                <br>
+            </form>
         <!-- output -->
             <div class="output">
-                <h2>{{h1_val}}</h2>
+                {% for link in all_links %}
+                    {{link.text}}
+                {% endfor %}
             </div>
         </body>
     </html>
