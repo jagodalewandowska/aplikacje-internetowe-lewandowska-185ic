@@ -166,6 +166,13 @@ element = request.POST.get('element', None)
 ```
 Następne kroki przebiegają tak samo jak w przykładach z zajęć (parsowanie, utworzenie pustej  tablicy, przejście do pętli. Operuje ona na wszystkich elementach na stronie, również przypisując jak wiele jest elementów.
 
+```
+url = website_link
+source=requests.get(url).text 
+all_links = []
+soup = BeautifulSoup(source, "html.parser")
+```
+
 W pętli natomiast ustalana jest wartość klasy, szukanie id, href (wynikiem jest link), tekst oraz parametry obrazków. Na koniec wszystkie parametry przekazywane są do utworzonej tablicy all_links, która zwracana jest na wyjściu za pomocą polecenia:
 ```
 return render(request, 'scrapped.html', {'all_links':all_links, 'amount': amount, 'url': url, 'element':element})
@@ -219,22 +226,3 @@ Pobrany element:
   		{{lxml1}} 
   </p> <br>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
