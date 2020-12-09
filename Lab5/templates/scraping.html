@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <html>
         <head>
             <title>Web Scraping</title>
         </head>
-        <body>
-            <form action="{% url 'scraping' %}", method="POST">
+        <body>            
+            <form action="{% url 'scrapped' %}", method="POST" style="font-family:'Bevan'">
                 {% csrf_token %}
-                <input type="text" name="web_link">
-                <input type="submit" name="submit">
+                <div class="row justify-content-md-center">
+                    <div class="col-6">
+                        <h5>Input HTML</h5>
+                        <input type="text" name="web_link" required>
+                    </div>
+                    <div class="col-6">
+                        <h5>Input element</h5>
+                        <input type="text" name="element" required>
+                    </div>
+                </div>
                 <br>
+                <div class="row">
+                    <div class="col" style="text-align: center;">
+                        <button type="submit" class="btn btn-info">Search</button>
+                    </div>
+                </div>                
             </form>
-        <!-- output -->
-            <div class="output">
-                {% for link in all_links %}
-                    {{link.text}}
-                {% endfor %}
-            </div>
         </body>
     </html>
 {% endblock %}
