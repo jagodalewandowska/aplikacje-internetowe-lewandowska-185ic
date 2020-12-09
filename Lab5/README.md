@@ -223,6 +223,6 @@ W formularzu wyświetlany jest tak jak poprzednie przykłady:
 Pobrany element:
                         
   <p style="color: rgb(22, 151, 190); font-family:'Pacifico'">
-  		{{lxml1}} 
+  		{{lxml2}} 
   </p> <br>
 ```
