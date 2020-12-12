@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import PostViewSet
+from .views import PostViewSet, UserViewSet
 from rest_framework.routers import SimpleRouter
 
 urlpatterns = [
@@ -12,6 +12,9 @@ urlpatterns = [
 ]
 
 router = SimpleRouter()
+# od teraz zamist user details jest user instance - dodatkowa opcja usuwania
+router.register('users', UserViewSet, basename='users')
 router.register('', PostViewSet, basename='posts')
+
 urlpatterns = router.urls
 

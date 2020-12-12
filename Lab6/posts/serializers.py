@@ -5,6 +5,9 @@
 
 # import klasy serializers oraz własnego modelu utworzonego wcześniej
 from rest_framework import serializers
+
+# import user_model
+from django.contrib.auth import get_user_model
 from .models import Post
 
 class PostSerializer(serializers.ModelSerializer):
@@ -13,3 +16,9 @@ class PostSerializer(serializers.ModelSerializer):
         # exclude - updated_at nie jest zawarte w fields
         fields = ('id', 'author', 'title', 'body', 'created_at',)
         model = Post
+
+# pewność, że nawiązujemy do odpowiedniego modelu użytkownika
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'username',)

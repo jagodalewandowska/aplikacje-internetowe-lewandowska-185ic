@@ -1,15 +1,21 @@
 from django.shortcuts import render
 
+# Dodawanie modelu użytkownika
+from django.contrib.auth import get_user_model
+
 # import generics z Django rest framework, dodawanie restrykcji 
 # aby nie pozwalać wszystkim na edycję postów
 from rest_framework import generics, permissions
 
-# Import modeli i serializerów
+# Import modeli i serializerów + dodanie UserSerializera
 from .models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, UserSerializer
 
 # import zezwoleń
 from .permissions import IsAuthorOrReadOnly
+
+# 
+from .serializers import PostSerializer
 
 # Import filtrowania
 from django_filters.rest_framework import DjangoFilterBackend
@@ -20,10 +26,12 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 # Import viewsets
 from rest_framework import viewsets
 
+
+
 # Wyświetlanie wszystkich postów na blogu
 class PostViewSet(viewsets.ModelViewSet):
     # zezwolenia tylko dla zalogowanych użytkowników
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (IsAuthorOrReadOnly,)
 
     # wyświetlanie wszystkich postów, serializer
     queryset = Post.objects.all()
@@ -35,6 +43,11 @@ class PostViewSet(viewsets.ModelViewSet):
 
     # kolejność
     ordering_fields =['author', 'title', 'body', 'created_at']
+
+# Viewset dla użytkowników
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
 
 
 '''
