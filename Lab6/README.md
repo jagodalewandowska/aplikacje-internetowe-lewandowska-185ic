@@ -42,7 +42,7 @@ Viewset jaki stworzyłam dla nowej aplikacji to ten wyświetlający listę film�
 
 ![alt text](https://i.imgur.com/wHkCdz1.png)
 
-Dzięki temu wykorzystałam w późniejszym kroku ten widok w tworzeniu route:
+Dzięki temu wykorzystałam w późniejszym kroku ten widok w tworzeniu routers:
 
 ```
 ...
@@ -112,6 +112,19 @@ Routers działa dla adresu po wpisaniu url **/v1/users/3**:
 
 ![alt text](https://i.imgur.com/0Yv0NZz.png)
 
+### 3. Movies
+
+Jak wcześniej wymieniony dla Movies również istnieje Routers:
+
+```
+...
+router = SimpleRouter()
+router.register('', MovieViewSet, basename='movieset')
+
+urlpatterns += router.urls
+...
+```
+
 ## Uwierzytelnianie (basic, session, token)
 
 By móc korzystać z nowego typu uwierzytelniania konieczne było dodanie fragmentu kody do settings.py. Są to domyślne klasy to utwierzytelniania:
@@ -126,6 +139,41 @@ Gdzie sessions jest wciąż potrzebne dla przeglądania API, ale Tokeny będą w
 
 ![alt text](https://i.imgur.com/ToUB3o2.png)
 
+Widoki:
+
+1. #### **Login** /rest-auth/login
+
+![alt text](https://i.imgur.com/NmjYAMH.png)
+
+2. #### **Logout** /rest-auth/reset
+
+![alt text](https://i.imgur.com/fLAjsdc.png)
+
+3. #### **Password Reset** - /rest-auth/password/reset
+
+![alt text](https://i.imgur.com/LdeBiIn.png)
+
+4. #### **Password Reset Confirm** - /rest-auth/password/reset/confirm
+
+![alt text](https://i.imgur.com/4vFWuoe.png)
+
+5. #### **Register** - /rest-auth/registration
+
+![alt text](https://i.imgur.com/xMP60tf.png)
+
+Wynik rejestracji:
+
+![alt text](https://i.imgur.com/wIUswHa.png)
+
+Otrzymany email:
+
+![alt text](https://i.imgur.com/Jpw4K2U.png)
+
+Nowy token:
+
+![alt text](https://i.imgur.com/3b9NfEi.png)
+
+
 
 ## Licznik wizyt z użyciem Cookies
 
@@ -139,7 +187,7 @@ Gdzie **cookies** jest moją nową funkcją. Wygląda ona następująco:
 
 ![alt text](https://i.imgur.com/7ADPsjd.png)
 
-Na początku definiowana jest wartość html, a następnie zastosowana jest prosty if, który w zależzności, jeśli znajdzie wartość cookies dla nas wyświetlana jest wiadomość:
+Na początku definiowana jest wartość html, a następnie zastosowana jest prosty if, który w zależzności, jeśli znajdzie wartość cookies dla nas wyświetlana jest wiadomość, że jesteśmy na stronie po raz pierwszy, jeśli nie, jest informacja, który to raz na stronie.
 
 - ### **Pierwszy raz**
 
@@ -159,7 +207,7 @@ Na początku definiowana jest wartość html, a następnie zastosowana jest pros
 
 # Własna aplikacja Movies - Filtry i Sortowanie
 
-
+Dla postow filtrowanie zostało również zaimplementowane, jednak teraz pokażę filtrowanie dla filmów z poprzedniego laboratorium (Lab4) oraz dodawanie gatunków.
 Aplikacja zawiera Obiekty Genre - które przy tworzeniu Movies można wykorzystywać z listy, dodając nową pozycję. Stan początkowy to:
 
 ![alt text](https://i.imgur.com/GinUapw.png)
