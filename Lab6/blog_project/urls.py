@@ -7,7 +7,8 @@ from django.urls import include, path, re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from posts.views import cookies
+from django.views.generic.base import TemplateView
 # swagger
 schema_view = get_schema_view(
    openapi.Info(
@@ -23,6 +24,8 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+   path('', cookies, name='home'),      
+
    # panel admina
    path('admin/', admin.site.urls),
 

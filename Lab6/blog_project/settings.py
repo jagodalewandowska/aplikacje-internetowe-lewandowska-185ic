@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    # Cookies
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -67,8 +68,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # Filtrowanie
-    'django_filters',
-    
+    'django_filters',    
 ]
 
 # Ustawianie domyślnych ustawień

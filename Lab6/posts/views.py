@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render
 
 # Dodawanie modelu użytkownika
@@ -14,7 +15,6 @@ from .serializers import PostSerializer, UserSerializer
 # import zezwoleń
 from .permissions import IsAuthorOrReadOnly
 
-# 
 from .serializers import PostSerializer
 
 # Import filtrowania
@@ -25,7 +25,8 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 
 # Import viewsets
 from rest_framework import viewsets
-
+from django.views import generic
+from django.http import HttpResponse
 
 
 # Wyświetlanie wszystkich postów na blogu
@@ -49,6 +50,20 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
 
+def cookies(request):  
+    html = HttpResponse("")
+    if request.COOKIES.get('visits'):           
+        value = int(request.COOKIES.get('visits'))
+        html = HttpResponse("<h1>You've been here {} times!</h1>".format(value + 1))   
+        html.set_cookie('visits', value + 1)           
+        
+    else:
+        value = 1
+        html = HttpResponse("<h1>You're here for the first time!</h1>")   
+        html.set_cookie('visits', value)        
+    return html
+
+    
 
 '''
 # Aby udostępniać dodawanie, aktualizowanie oraz usuwanie postów
