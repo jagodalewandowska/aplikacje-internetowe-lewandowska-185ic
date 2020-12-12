@@ -141,11 +141,11 @@ Gdzie sessions jest wciąż potrzebne dla przeglądania API, ale Tokeny będą w
 
 Widoki:
 
-1. #### **Login** /rest-auth/login
+1. #### **Login** - /rest-auth/login
 
 ![alt text](https://i.imgur.com/NmjYAMH.png)
 
-2. #### **Logout** /rest-auth/reset
+2. #### **Logout** - /rest-auth/reset
 
 ![alt text](https://i.imgur.com/fLAjsdc.png)
 
