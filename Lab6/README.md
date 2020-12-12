@@ -1,91 +1,68 @@
-# Lab 4
+# Lab 6 - kontynuacja Lab 4
 
-Wykorzystanie Django REST Framework. Dodanie Swaggera.
+Wykorzystanie Django REST Framework. Viewsets, basic, token, session, implementacja licznika cookies.
 
 ####
-##### Wymagania dotyczące czwartego zadania:
+##### Wymagania dotyczące szóstego zadania:
 ####
 
-![alt text](https://i.imgur.com/TwbYQN0.png)  
+![alt text](https://i.imgur.com/AT3WlNO.png)  
 
 
 ---
 # Realizacja kodu z zajeć wraz z małymi modyfikacjami
 
-Jedną z dwóch utworzonych aplikacji w projekcie to posts. Do analizy rozpoczynam od PostList. To tutaj widnieją wszystkie posty, a także jest możliwe dodawanie nowych. Jeśli użytkownik jest niezalogowany nie są wyświetlane żadne z istniejących elementów. Podląg dodanych postów w panelu administratora:
+Aplikacje w projekcie do kontynuacja lab4. Są tutaj dwie aplikacje: 
+- **Posts** - /api/v1
+- **Movies** - /api/v2
 
-![alt text](https://i.imgur.com/n7nPXtN.png)
+## Viewsets 
 
-## Dodawanie posta
+### 1. Posts
 
-Jako zalogowany użytkownik, można dodać nowy post.
+Obiekty typu ViewSet nie posiadają metod takich jak get() czy post(), ale posiadają list() oraz create(). Dzięki temu można zastosować Routers w następnym podpunkcie.
 
-![alt text](https://i.imgur.com/1toV43L.png)  
+![alt text](https://i.imgur.com/XGGDUvA.png)
 
-Post widnieje na liście jako dodany.
 
-![alt text](https://i.imgur.com/b4ST7gk.png)
+**Serializery** - dzięki nim można wybrać jakie elementy są wyświetlanie na stronie. Zmodyfikowałam je tak, aby wyświetlane były również adresy email:
 
-Na stronie możliwe jest również filtrowanie postów oraz wyszukiwanie.
+![alt text](https://i.imgur.com/5LZhkdL.png)
 
-- Wybranie wyszukiwania postów stworzonych przez użytkownika "Jagoda", rezultat:
+Wyświetlanie wszystkich użytkowników:
 
-![alt text](https://i.imgur.com/mUWp33h.png)  
+![alt text](https://i.imgur.com/34M1cAB.png)
 
-- Dodanie wyszykiwania, dla przykłady tytuły "rosnąco" - więc alfabetycznie.
+Później można użyć ten ViewSet tworząc Routers.
 
-![alt text](https://i.imgur.com/t4JE9q6.png)
 
-Zakładka GET pozwala na pobranie postów w postaci JSON.
+### 2. Movies
 
-## Zezwolenia - permissions
+Viewset jaki stworzyłam dla nowej aplikacji to ten wyświetlający listę filmów o nazwie MovieViewSet. Obiekty typu ViewSet nie posiadają metod takich jak get() czy post(), ale posiadają list() oraz create().
 
-Za pomocą wbudowanych zezwoleń w Django Rest możliwe jest manipulowanie tym, co widzą użytkownicy zalogowani czy mogą posty dodawać, edytować oraz usuwać. Dzięki temu można ustalać odpowiednie uprawnienia dla użytkowników w zależności czy są administratorami, czy nie oraz ograniczyć zezwolenia dla niezalogowanych użytkowników. W przykładzie poniżej tylko osoba, która utworzyła post może go edytować, w przeciwnym razie można go tylko odczytać.
+![alt text](https://i.imgur.com/wHkCdz1.png)
 
-Aby możliwa była ta funkcja utworzona została klasa
-```
-class IsAuthorOrReadOnly(permissions.BasePermission)
-```
+Dzięki temu wykorzystałam w późniejszym kroku ten widok w tworzeniu route:
 
-By edytować dostęp do poszczególnych klas, takich jak posty, czy w późniejszej części - aplikacji stworzonej przeze mnie, można korzystać z następujących zezwoleń:
-- AllowAny - każdy użytkownik ma pełen dostęp
-- IsAuthenticated - tylko zalogowani użytkownicy
-- IsAdminUser - tylko administrator
-- IsAuthenticatedOrReadOnly - niezalogowani użytkownicy mogą tylko przeglądać stronę, zalogowani dodawać, edytować i usuwać
-
-Dodawane są one w obiektach jak na przykładzie postów PostViewSet, a następnie można ją ustawić, jak tutaj, używając wyżej wymienione wartości:
 ```
 ...
-class PostViewSet(viewsets.ModelViewSet):
-    # zezwolenia tylko dla zalogowanych użytkowników
-    permission_classes = (IsAuthorOrReadOnly,)
-    ...
+router = SimpleRouter()
+router.register('', MovieViewSet, basename='movieset')
+
+urlpatterns += router.urls
+...
 ```
 
-Dla przykładu dodałam nowy post jako "Magdalena", wchodząc do api/v1/4 jest on widoczny, a także można go edytować i usuwać.
+##### Serializery - Wyświetlane są wszystkie atrybuty:
 
-![alt text](https://i.imgur.com/JHu6w9p.png)
+![alt text](https://i.imgur.com/foHzCn7.png)
 
-Po wylogowaniu te opcje nie są już dostępne (np. przycisk delete zniknął). Niezalogowany użytkownik może tylko dodawać posty, ale nie ma dostępu do usuwania ani edycji.
+Można by było zastosować formę exclude i usuwając np. producer z listy nie byłby już on wyświetlany.
 
-![alt text](https://i.imgur.com/yagKZCx.png)
-
-1. ### Użytkownik niezalogowany
-
-Zmieniłam ustawienia tak, aby użytkownik niezalogowany nie mógł już widzieć dodanych postów, zmieniając wyżej wymieniony kawałek kodu na taki:
-```
-permission_classes = (permissions.IsAuthenticated,)
-```
-
-Posty nie są już widoczne:
-
-![alt text](https://i.imgur.com/ogsbuQY.png)  
-
-2. ### Użytkownik zalogowany
-
-![alt text](https://i.imgur.com/f2tound.png) 
 
 ## Routers
+
+### 1. Posts - dla postów
 Wyróżniamy dwa rodzaje Routers - Simple oraz Default. Pozwalają one na automatyczne ustawianie ścieżek URL.
 Dzięki użyciu routers, możliwe jest pominięcie zapisu:
 
@@ -116,55 +93,72 @@ Dodane one również zostały w przypadku aplikacji drugiej - Movies. Dzięki ni
 
 ![alt text](https://i.imgur.com/ZHgjDAB.png)
 
-## Swagger
+### 2. Posts - dla użytkowników
 
-W zadaniu wymagane było również dodanie Swaggera, który umożliwia dokładnie badanie elementów utworzonych przy pomocy REST API. Dostępne są następujące ścieżki, opisane również w kodzie:
+W tym laboratorium dodane były również nowy ViewSet dla użytkowników. Dlatego też, w posts/urls.py dodałam następujacą linię:
 
-- **/swagger.json** to widok json
-
-![alt text](https://i.imgur.com/FcprWWh.png)
-
-- **/swagger.yaml** to widok yaml, pobrany plik przy przejściu do strony:
-
-![alt text](https://i.imgur.com/p7o9YvH.png)
-
-- **/redoc** to widok redoc
-
-![alt text](https://i.imgur.com/bccJRbt.png)
-Wszystkie informacje na temat utworzonych obiektów i struktur są dokładnie podane. Przykład dla tworzenia nowego postu i odpowiedzi:
-
-![alt text](https://i.imgur.com/zrESK2V.png)
-
-Przykłady dla drugiej części zadania, którą było utworzenie własnej aplikacji (jest to w moim przypadku aplikacja Movies, a w niej modele Movie oraz Genre. Widać go tutaj:
-
-![alt text](https://i.imgur.com/lqBx0LF.png)
-
-- **/swagger** to widok swagger ui
-
-![alt text](https://i.imgur.com/pDmKx31.png)
-
-Widok modeli **Post**, **Genre** oraz **Movie**, które należą do aplikacji drugiej -- tej utworzonej przeze mnie, do której przejdę w dalszej części Readme.
-
-![alt text](https://i.imgur.com/irs9A2i.png)
-
-
-## Serializery
-
-Serializery służą do zarządzania zawartością wyświetlaną dla użytkownika. Dla przykładu mając listę postów, można zdeklarować, że dana wartość nie ma być wyświetlana. Utworzony obiekt wraz z komentarzem wygląda następująco:
 ```
-# include - czyli zawarte będą id, autor, tytuł, post, kiedy utworzono
-# exclude - updated_at nie jest zawarte w fields
-        fields = ('id', 'author', 'title', 'body', 'created_at',)
+...
+      # od teraz zamist user details jest user instance - dodatkowa opcja usuwania
+      router.register('users', UserViewSet, basename='users')
+															...
 ```
-Dlatego w liście widać tylko id, autor, tytuł ... ale nie **updated_at**.
+Url pozostaje puste, jednak jeśli byłoby tam coś zdefiniowane zamieniona byłaby wartość urlpatterns = router.urls na
+```
+urlpatterns += router.urls
+```
 
-![alt text](https://i.imgur.com/SwWdS4k.png)  
+Routers działa dla adresu po wpisaniu url **/v1/users/3**:
+
+![alt text](https://i.imgur.com/0Yv0NZz.png)
+
+## Uwierzytelnianie (basic, session, token)
+
+By móc korzystać z nowego typu uwierzytelniania konieczne było dodanie fragmentu kody do settings.py. Są to domyślne klasy to utwierzytelniania:
+```
+'DEFAULT_AUTHENTICATION_CLASSES': [
+'rest_framework.authentication.SessionAuthentication',
+#'rest_framework.authentication.BasicAuthentication',
+'rest_framework.authentication.TokenAuthentication',
+],
+```
+Gdzie sessions jest wciąż potrzebne dla przeglądania API, ale Tokeny będą wykorzystywane do przekazywania danych w nagłówku HTTP. Kolejną rzeczą do doania są "'rest_framework.authtoken'," w zainstalowanych aplikacjach. Podgląd tokenów w panelu administratora, które dodane są tylko dla użytkowników ktorzy zalogowali się po dodawaniu tokenów do strony. Znajduje się on pod adresem **/admin/authtoken/tokenproxy/**.
+
+![alt text](https://i.imgur.com/ToUB3o2.png)
 
 
+## Licznik wizyt z użyciem Cookies
+
+Aby utworzyć prosty licznik wejść zdefiniowalam nową funkcję w posts/views.py. Wyświetla ona proste powiadomienie w przypadku wejścia na stronę główną, przekierowanie znajduje się w urls.py:
+```
+urlpatterns = [
+   path('', cookies, name='home'),     
+   			...
+```
+Gdzie **cookies** jest moją nową funkcją. Wygląda ona następująco:
+
+![alt text](https://i.imgur.com/7ADPsjd.png)
+
+Na początku definiowana jest wartość html, a następnie zastosowana jest prosty if, który w zależzności, jeśli znajdzie wartość cookies dla nas wyświetlana jest wiadomość:
+
+- ### **Pierwszy raz**
+
+![alt text](https://i.imgur.com/JQQCJf1.png)
+
+- ### **Piąty raz**
+
+![alt text](https://i.imgur.com/vWgpktJ.png)
+
+- ### **Animacja**
+
+![alt text](https://i.imgur.com/ul9CtdB.gif)
 
 
 ---
-# Własna aplikacja Movies
+
+
+# Własna aplikacja Movies - Filtry i Sortowanie
+
 
 Aplikacja zawiera Obiekty Genre - które przy tworzeniu Movies można wykorzystywać z listy, dodając nową pozycję. Stan początkowy to:
 
@@ -173,24 +167,6 @@ Aplikacja zawiera Obiekty Genre - które przy tworzeniu Movies można wykorzysty
 A także listę 12 filmów, które mają nadane wartości z obiektu gatunek.
 
 ![alt  text](https://i.imgur.com/XpuqKdn.png)
-
-Zezwolenia ustawiłam tak, aby tylko administrator mógł zarządzać obiektami typu Gatunek.
-
-- Widok **użytkownika niezalogowanego** - który nie może przeglądać gatunków, ale może widzieć filmy, lecz ich nie dodawać.
-
-![alt text](https://i.imgur.com/VKMgHL6.png)
-
-Brak uprawnień do dodawania filmów:
-
-![alt text](https://i.imgur.com/iDdC6a2.png)
-
-- Widok użytkownika **Magdalena**
-
-![alt text](https://i.imgur.com/TjehWc3.png)
-
-- Widok **administratora** - Jagoda
-
-![alt text](https://i.imgur.com/mj8SCnB.png)
 
 ## Dodawanie nowego gatunku oraz filmu
 
@@ -203,30 +179,7 @@ Dodawanie nowego filmu:
 ![alt text](https://i.imgur.com/smmP2GY.png)
 
 
-## Serializery dla aplikacji Movies
 
-Wyświetlane są wszystkie atrybuty:
-
-![alt text](https://i.imgur.com/foHzCn7.png)
-
-Można by było zastosować formę exclude i usuwając np. producer z listy nie byłby już on wyświetlany.
-
-## Viewset 
-
-Viewset jaki stworzyłam dla nowej aplikacji to ten wyświetlający listę filmów o nazwie MovieViewSet. Obiekty typu ViewSet nie posiadają metod takich jak get() czy post(), ale posiadają list() oraz create().
-
-![alt text](https://i.imgur.com/wHkCdz1.png)
-
-Dzięki temu wykorzystałam w późniejszym kroku ten widok w tworzeniu route:
-
-```
-...
-router = SimpleRouter()
-router.register('', MovieViewSet, basename='movieset')
-
-urlpatterns += router.urls
-...
-```
 
 ## Sortowanie i filtrowanie, oraz wyszukiwanie
 

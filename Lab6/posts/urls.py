@@ -17,5 +17,5 @@ router = SimpleRouter()
 router.register('users', UserViewSet, basename='users')
 router.register('', PostViewSet, basename='posts')
 
-urlpatterns += router.urls
+urlpatterns = router.urls
 
