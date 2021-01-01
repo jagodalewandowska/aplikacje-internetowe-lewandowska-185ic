@@ -309,9 +309,25 @@ Wynik
 
 ![](https://i.imgur.com/kOg9zQS.png)
 
+### 8-not
 
+Nasłuchiwanie każdej zmiany klucza. Następujący kod wraz z uruchomieniem:
 
+![](https://i.imgur.com/BzHa695.png)
 
+Zmiany:
+
+![](https://i.imgur.com/GzH5QYI.png)
+
+Po wykonaniu nowego polecenia o treści append
+
+![](https://i.imgur.com/xr2WRVm.png)
+
+### 8-keyevent
+
+Powiadomienia o każdym użyciu komendy set.
+
+![](https://i.imgur.com/FLT6jQ0.png)
 
 
 
