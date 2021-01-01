@@ -242,7 +242,13 @@ Wykorzystanie xdel, które jest jedynym zamiennikiem xack jeśli nie wykorzystyw
 redis_connection.xdel(stream_name, msg_id)
 ```
 
+### 6-pipelining
 
+Obserwowanie kluczy, czy nie zmieniły się za pomocą polecenia **watch**. 
+
+![](https://i.imgur.com/25KT6Uy.png)
+
+nil - oznacza niepowodzenie, ponieważ klucz zmienił się. 
 
 
 
