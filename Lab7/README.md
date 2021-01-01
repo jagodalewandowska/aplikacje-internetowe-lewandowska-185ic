@@ -132,6 +132,55 @@ Wynik:
 
 ![](https://i.imgur.com/MCsXCUm.png)
 
+### 3-zbiory
+
+Utworzenie zbioru. Za każdym razem wyświetlane są inne elementy:
+
+![](https://i.imgur.com/X1rla8J.png)
+
+Uruchomienie programu 3 razy, za każdym razem elementy wyświetlone są w innej kolejności:
+
+![](https://i.imgur.com/jfQfZct.png)
+
+### 3a-posortowane-zbiory
+
+Stworzenie klucze, które będą posortowane według przypisanych wartości.
+
+![](https://i.imgur.com/4WKfQHT.png)
+
+Wyświetlenie kluczy:
+
+![](https://i.imgur.com/iESiLsk.png)
+
+### 3b-posortowane-zbiory-modyfikacje
+
+Wartości w różnych kolejnościach, powinny być wyświetlone klucz2 -> klucz4 -> klucz3 -> klucz1.
+
+![](https://i.imgur.com/s4bmrqR.png)
+
+Wyświetlenie
+
+![](https://i.imgur.com/748cnCB.png)
+
+### 3c-posortowane-zbiory-same
+
+W przypadku takich samych wartości dodanie withscores, by pokazać że mają one takie same wartości.
+
+![](https://i.imgur.com/G4DJ7YL.png)
+
+Wyniki
+
+![](https://i.imgur.com/Xp6Zc82.png)
+
+### 3d-hash
+
+Wykorzystanie hash - czyli map, słowników.
+
+![](https://i.imgur.com/TsDGwsa.png)
+
+Wynik:
+
+![](https://i.imgur.com/QpVnufi.png)
 
 
 
