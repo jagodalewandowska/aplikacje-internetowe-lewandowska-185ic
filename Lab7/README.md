@@ -250,6 +250,64 @@ Obserwowanie kluczy, czy nie zmieniły się za pomocą polecenia **watch**.
 
 nil - oznacza niepowodzenie, ponieważ klucz zmienił się. 
 
+![](https://i.imgur.com/jAlWcBc.png)
+
+### 7-lua
+
+Przekazywanie w komendzie eval ciało skryptu napisanego w lua. Redis odbiera kod, wykonuje i zwraca rezultat. Wyświetlenie słowa test. Drugi argument eval to 0, określa ilość argumentów które można przekazać do skrypti/ Lua ideksuje od 1, wszystko przekazane jest do tabeli argv.
+
+![](https://i.imgur.com/3rXIXi6.png)
+
+![](https://i.imgur.com/jAlWcBc.png)
+
+### 7a-lua-keys
+
+Pierwsze dwa argmenty określane są w tabeli keys, a kolejne w tabeli argv. Skrypt przekazuje dane i zwraca je jako tablicę. 
+
+![](https://i.imgur.com/45r9Sqz.png)
+
+Wynik
+
+![](https://i.imgur.com/JimKNPP.png)
+
+
+### 7b-lua-array
+
+Utworzenie tablicy 15 elementowej
+
+![](https://i.imgur.com/PdEJGZj.png)
+
+Wyświetlenie elementów:
+
+![](https://i.imgur.com/yu1LHVP.png)
+
+### 7c-lua-json
+
+Aby wykorzystywać dane json, wykonanie działania
+
+![](https://i.imgur.com/0rkqwOE.png)
+
+Wynik, liczba 27
+
+![](https://i.imgur.com/KPwpnRi.png)
+
+### 7d-lua-call
+
+Dodanie wartości 11 i 5 w przykładzie z artykułu:
+
+![](https://i.imgur.com/eohrjmV.png)
+
+Wynik
+
+![](https://i.imgur.com/EzatrNA.png)
+
+### 7e-lua-another
+
+![](https://i.imgur.com/ZwlNTVN.png)
+
+### 7f-lua-cache
+
+![](https://i.imgur.com/kOg9zQS.png)
 
 
 
