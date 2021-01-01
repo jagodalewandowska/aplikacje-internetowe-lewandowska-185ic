@@ -173,7 +173,6 @@ Wyniki
 ![](https://i.imgur.com/Xp6Zc82.png)
 
 ### 3d-hash
-
 Wykorzystanie hash - czyli map, słowników.
 
 ![](https://i.imgur.com/TsDGwsa.png)
@@ -181,6 +180,36 @@ Wykorzystanie hash - czyli map, słowników.
 Wynik:
 
 ![](https://i.imgur.com/QpVnufi.png)
+
+
+### 4-pubsub
+
+Utworzenie subskrybenta z kluczem **test**.
+
+![](https://i.imgur.com/cJ8iYaj.png)
+
+Wynik
+
+![](https://i.imgur.com/zxaJ2WR.png)
+
+Utworzenie nowej wiadomości
+
+![](https://i.imgur.com/xpFRr5Y.png)
+
+Ponieważ wcześniej uruchomiony pubsub oczekuje na nowe wiadomości, wyświetlona zostaje nowa wiadomość:
+
+![](https://i.imgur.com/n4XxSCX.png)
+
+### 4-pubsub-task
+
+Podłączanie się do kanałów
+
+![](https://i.imgur.com/1pnvMHK.png)
+
+Wynik
+
+![](https://i.imgur.com/L6KgoaA.png)
+
 
 
 
