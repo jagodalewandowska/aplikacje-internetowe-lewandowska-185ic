@@ -210,7 +210,37 @@ Wynik
 
 ![](https://i.imgur.com/L6KgoaA.png)
 
+### 5-strumienie
 
+Utworzenie strumienia
+
+![](https://i.imgur.com/g5FUVtw.png)
+
+Wynik
+
+![](https://i.imgur.com/s51R3il.png)
+
+Liczy przed kluczem do identyfikator. Pierwsza wartość do milisekundy od 1 stycznia 1970, a następne to nazwa sekwencji.
+
+### 5a-strumienie-block
+
+![](https://i.imgur.com/EGLX5NC.png)
+
+Dodanie elementu:
+
+![](https://i.imgur.com/iaah5ty.png)
+
+
+### 5b-strumienie-point
+
+Aby elementy nie ginęły, konieczny jest następujący kod
+
+![](https://i.imgur.com/ljesF5o.png)
+
+Wykorzystanie xdel, które jest jedynym zamiennikiem xack jeśli nie wykorzystywane jest grupowanie konsumentów:
+```
+redis_connection.xdel(stream_name, msg_id)
+```
 
 
 
