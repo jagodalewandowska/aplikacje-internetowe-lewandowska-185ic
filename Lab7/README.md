@@ -74,6 +74,80 @@ Wynik:
 
 ![al text](https://i.imgur.com/LN7ateh.png)
 
+## Artykuł 2 - Listy
+
+### 2-listy
+
+![](https://i.imgur.com/CRr9mc4.png)
+
+Wyświetlenie:
+
+![](https://i.imgur.com/OvHQSPV.png)
+
+Zwrócenie innych wartości:
+
+![](https://i.imgur.com/guniEgJ.png)
+
+Wynik:
+
+![](https://i.imgur.com/Scr4Caz.png)
+
+### 2a-listy-br
+
+Wyświetlenie programu, który działa cały czas, brpop jest blokada programu, jesli na liście nie będzie elementu. W przeciwnym przypadku zapętla się, pobierając elementy i kończąc program.
+
+![](https://i.imgur.com/aKQoWea.png)
+
+Wynik:
+
+![](https://i.imgur.com/O3wCyK9.png)
+
+### 2b-listy-select
+
+Select służy do przełączania się między przestrzeniami. Polega to na tym, że dana zostaje zapisana na bazie zerowej, a następnie odczytywana jest z pierwszej by otrzymać poprawną wartość - 'wartosc'
+
+![](https://i.imgur.com/nLrkd41.png)
+
+Wynik:
+
+![](https://i.imgur.com/LfVfAGI.png)
+
+### 2c-listy-ttl
+
+Ustawienia "życia" klucza na 24. Po tym czasie jest usuwany.
+
+![](https://i.imgur.com/zfB9XzK.png)
+
+Wynik:
+
+![](https://i.imgur.com/yOe34ai.png)
+
+### 2d-listy-set-expire
+
+Odpowiednik poprzedniego, z użyciem poleceń set oraz expire
+
+![](https://i.imgur.com/renuXTt.png)
+
+Wynik:
+
+![](https://i.imgur.com/MCsXCUm.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
