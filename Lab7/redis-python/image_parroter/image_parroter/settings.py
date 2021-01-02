@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 from decouple import config
 
@@ -123,7 +124,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# dodanie media root do thumnailera, skąd będzie podawana zawartość 
+# utworzenie lokalizacji miejsc jeśli nie istnieją
+
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'media'))
+IMAGES_DIR = os.path.join(MEDIA_ROOT, 'images')
+
+if not os.path.exists(MEDIA_ROOT) or not os.path.exists(IMAGES_DIR):
+    os.makedirs(IMAGES_DIR)
 
 # celery - ustawienie celery tak, aby używało redisa i gdzie się podłączyć
 # ustawienie tak, aby spodziewało się odpowiedzi gdzie się podłączyć i
