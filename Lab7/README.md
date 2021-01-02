@@ -10,8 +10,6 @@
 ---
 # Wykonanie zadań z artykułów
 
-## Artykuł 1 - instalacja, połaczenie z redis, redis-cli
-
 ![alt text](https://i.imgur.com/lE3O7SK.png)
 
 ### 1.1-connection
