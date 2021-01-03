@@ -136,7 +136,7 @@ IMAGES_DIR = os.path.join(MEDIA_ROOT, 'images')
 if not os.path.exists(MEDIA_ROOT) or not os.path.exists(IMAGES_DIR):
     os.makedirs(IMAGES_DIR)
 
-# celery - ustawienie celery tak, aby używało redisa i gdzie się podłączyć
+# celery - ustawienie celery tak, aby używało redisa
 # ustawienie tak, aby spodziewało się odpowiedzi gdzie się podłączyć i
 # ustawienie typu danych aplication/json
 CELERY_BROKER_URL = 'redis://localhost:6379'
