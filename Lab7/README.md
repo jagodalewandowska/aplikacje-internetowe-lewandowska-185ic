@@ -338,6 +338,10 @@ redis_cli.exe również działa:
 
 ![](https://i.imgur.com/0txcYye.png)
 
+Test:
+
+![](https://i.imgur.com/P19VFOy.png)
+
 Utworzenie pliku celery.py w nowym projekcie, który zawiera powiązanie środowiska projektu a celery tak, aby sam wykyrwał w nim zadania do obsłużenia.
 
 Tworzony jest instancji klasy Celery:
@@ -389,11 +393,11 @@ W TaskView:
 
 Strona, dodanie elementu:
 
-![](https://i.imgur.com/v7wMqsP.png)
+![](https://i.imgur.com/6HT9IFz.png)
 
 Otrzymany plik zip:
 
-![](https://i.imgur.com/EWk76PB.png)
+![](https://i.imgur.com/BHuueJt.png)
 
 Konsola celery:
 
@@ -404,6 +408,28 @@ Odpowiedź:
 ![](https://i.imgur.com/RDhMnAf.png)
 
 ![](https://i.imgur.com/hNx5rT0.png)
+
+# Workery, własne taski
+
+Pierwszy task to mnożenie i dzielenie:
+
+![](https://i.imgur.com/vAHkK23.png)
+
+Widać je podczas uruchamiania w konsoli:
+
+![](https://i.imgur.com/hJsodp4.png)
+
+Po przejściu do shell importuję task:
+
+![](https://i.imgur.com/Y1MbZEY.png)
+
+A następnie wykorzystując import i wykorzystując polecenie get otrzymuję wynik:
+
+![](https://i.imgur.com/W0Fmlwg.png)
+
+Tak samo dla dzielenia:
+
+![](https://i.imgur.com/J4lpZ09.png)
 
 
 
