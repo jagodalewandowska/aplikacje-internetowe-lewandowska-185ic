@@ -50,3 +50,11 @@ def make_thumbnails(file_path, thumbnails=[]):
 
     # zwracanie url do pobrania pliku
     return results
+
+@shared_task
+def multiply(x, y):
+    return x * y
+
+@shared_task
+def divide(x, y):
+    return x / y
