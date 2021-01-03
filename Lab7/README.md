@@ -8,7 +8,7 @@
 
 
 ---
-# Wykonanie zadań z artykułów
+# **Wykonanie zadań z artykułów**
 
 ![alt text](https://i.imgur.com/lE3O7SK.png)
 
@@ -326,6 +326,87 @@ Po wykonaniu nowego polecenia o treści append
 Powiadomienia o każdym użyciu komendy set.
 
 ![](https://i.imgur.com/FLT6jQ0.png)
+
+
+# **Django-Redis-Celery**
+
+Zainstalowanie i włączenie **redis_server.exe**.
+
+![](https://i.imgur.com/POIkkGK.png)
+
+redis_cli.exe również działa:
+
+![](https://i.imgur.com/0txcYye.png)
+
+Utworzenie pliku celery.py w nowym projekcie, który zawiera powiązanie środowiska projektu a celery tak, aby sam wykyrwał w nim zadania do obsłużenia.
+
+Tworzony jest instancji klasy Celery:
+```
+celery_app = Celery('image_parroter')
+```
+A następnie aktualizowanie konfiguracji tak, aby wykrywane były zadania w projekcie - a konfiguracje zaczynają się od CELERY_.
+
+Dodanie nowych aplikacji w settings:
+
+![](https://i.imgur.com/rCuk3WT.png)
+
+Następnie na dole ustawień konieczne jest dodanie lokalizacji, jeśli nie istnieją. Są to media_root oraz images_dir:
+```
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'media'))
+IMAGES_DIR = os.path.join(MEDIA_ROOT, 'images')
+```
+
+Trzeba również zaznaczyć jaki jest dumyslny adres, jego backend, jaki format będzie akceptowalny:
+```
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+```
+
+W utworzonym pliku **tasks.py** konieczny jest import narzędzia do zarządzania plikami zip: tak jak odczytywanie, zapisywanie. Tworzone są zadania w @shared_task - która akceptuje wymiary obrazu tworząc nowy. Na początku jest to rozdzielanie ścieżek oraz zdefiniowanie miejsca przechowywania danych i jak wyglądać będzie zwracanie url końcowego.
+
+![](https://i.imgur.com/X3b7cZy.png)
+
+Następnie jest próba otwarcia obrazu i przy wykorzystaniu zaimportowanych elementów zapisywanie nowych elementów i kopiowanie starych - oryginalnnych.
+
+![](https://i.imgur.com/RHS9GB4.png)
+
+W **views.py** utworzone są różne elementy:
+
+- FileUploadForm - formularz do przesyłania elementów
+- HomeView - do wyświetlania głównej strony, który jednocześnie wykorzystuje obiekt FileUploadForm oraz pole ImageField
+- TaskView - sprawdzanie statusu make_thumbnails, wykorzystywane przez AJAX
+
+Fragment HomeView, tworzącego nowy obiekt i ewentualne zwracanie formularza w przypadku błędów.
+
+![](https://i.imgur.com/xtRhpTd.png)
+
+W TaskView:
+
+![](https://i.imgur.com/EuePph9.png)
+
+Strona, dodanie elementu:
+
+![](https://i.imgur.com/v7wMqsP.png)
+
+Otrzymany plik zip:
+
+![](https://i.imgur.com/EWk76PB.png)
+
+Konsola celery:
+
+![](https://i.imgur.com/hJlxZJR.png)
+
+Odpowiedź:
+
+![](https://i.imgur.com/RDhMnAf.png)
+
+![](https://i.imgur.com/hNx5rT0.png)
+
+
+
 
 
 
