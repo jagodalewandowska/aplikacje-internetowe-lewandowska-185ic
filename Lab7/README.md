@@ -411,6 +411,8 @@ Odpowiedź:
 
 # Workery, własne taski
 
+## Proste działania
+
 Pierwszy task to mnożenie i dzielenie:
 
 ![](https://i.imgur.com/vAHkK23.png)
@@ -431,19 +433,90 @@ Tak samo dla dzielenia:
 
 ![](https://i.imgur.com/J4lpZ09.png)
 
+## Dodawanie wraz z wyświetlaniem komunikatu
 
+za pomocą importowanego get_task_logger:
+```
+from celery.utils.log import get_task_logger
+```
 
+Funkcja addition pobiera funkcje i informuje jakie będą dodane:
 
+![](https://i.imgur.com/1cgS2fb.png)
 
+Import taska a następnie wywołanie go:
 
+![](https://i.imgur.com/2vff28L.png)
 
+Odpowiedź z konsoli:
 
+![](https://i.imgur.com/n5nq5i5.png)
 
+## Taski okresowe
 
+Utworzone dwa taski okresowe:
 
+1. Task wyświetlany co minutę - **minute()**
 
+![](https://i.imgur.com/Ct2f8bu.png)
 
+2. Task wyświetlany o danej godzinie - **notify()**
 
+![](https://i.imgur.com/U0dZBBP.png)
 
+Następnie w ustawieniach dodany jest zaplanowany "beat". Pierwszy z nich to ten wysyłający komunikat co minutę za pomocą funkcji **contrab**, a drugi bardzo podobnie, codziennie, o godzinie 16.
 
+![](https://i.imgur.com/CZlFgg1.png)
 
+Uruchomiony zostaje serwer redis oraz consola z celery - jedna do uruchomienia go, druga do wywołania "beat". 
+
+Wywołanie jednego beatu przebiega za pomocą polecenia:
+```
+celery -A image_parroter beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+```
+
+Co minutę zostaje wysyłany rozkaz:
+
+![](https://i.imgur.com/udwpSWg.png)
+
+Odpowiedź w drugiej konsoli:
+
+![](https://i.imgur.com/VMQpMtZ.png)
+
+O 16 natomiast zostaje wysłany inny komunikat:
+
+![](https://i.imgur.com/yajRWvG.png)
+
+Odpowiedź:
+
+![](https://i.imgur.com/VxM9TjT.png)
+
+### Wykorzystanie Celery Beat
+
+Po zainstalowaniu Celery Beat w panelu administratora widnieją Periodic Tasks:
+
+![](https://i.imgur.com/1LpzNzY.png)
+
+Tworzę nowy interval task, który będzie wykonywał inne zadanie:
+
+![](https://i.imgur.com/8hqFHzM.png)
+
+Funkcja wyświetlana:
+
+![](https://i.imgur.com/usmZrch.png)
+
+Ustawienie jak często będzie wywoływany (25sekund):
+
+![](https://i.imgur.com/5Y2YIE9.png)
+
+Dodanie od kiedy ma być ten task:
+
+![](https://i.imgur.com/PthMT9a.png)
+
+Lista tasków:
+
+![](https://i.imgur.com/NeqFMwV.png)
+
+Task wyświetla się co 25 sekund:
+
+![](https://i.imgur.com/6EYv5qm.png)

@@ -1,10 +1,13 @@
 import os
 from zipfile import ZipFile
 
-from celery import shared_task
+from celery import shared_task, Celery
 from PIL import Image
 
 from django.conf import settings
+from celery.utils.log import get_task_logger
+
+# okresowe
 
 @shared_task
 def make_thumbnails(file_path, thumbnails=[]):
@@ -58,3 +61,27 @@ def multiply(x, y):
 @shared_task
 def divide(x, y):
     return x / y
+
+logger = get_task_logger(__name__)
+
+@shared_task
+def addition(x, y):
+    logger.info('Adding {0} + {1}'.format(x, y))
+    return x + y
+
+# Taski okresowe
+
+# Wyświetlanie co minutę
+@shared_task 
+def minute():
+     print('---- Its been a minute ----')
+
+# wyświetlane codziennie o danej godzinie
+@shared_task
+def notify():
+    print('---- Its been a while! ----')
+
+# periodic task w adminie
+@shared_task
+def simple():
+    print('---- I was made for celery beat app -----')

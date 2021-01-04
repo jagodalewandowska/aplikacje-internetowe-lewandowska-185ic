@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+from celery.schedules import crontab   
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,7 +44,8 @@ INSTALLED_APPS = [
     'thumbnailer.apps.ThumbnailerConfig',
     # dodanie widget tweaks by kontrolować renderowanie wpisywanej formuły tak,
     # aby poźniej dodawać pliki
-    'widget_tweaks'
+    'widget_tweaks',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,16 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+# Do tasków czasowych
+CELERY_TIMEZONE = 'Europe/Warsaw'
+CELERY_BEAT_SCHEDULE = {
+ 'send-every-minute': {
+       'task': 'thumbnailer.tasks.minute',
+       'schedule': crontab()
+    }, 
+    'add-every-monday-evening': {
+        'task': 'thumbnailer.tasks.notify',
+        'schedule': crontab(minute=00, hour=16)
+    }
+}
