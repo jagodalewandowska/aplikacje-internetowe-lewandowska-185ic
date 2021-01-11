@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # do lab9
     'rest_framework',
     # dodanie aplikacji przepisów do zainstalowanych aplikacji
-    'tutorials.apps.RecipebookConfig',
+    'recipebook.apps.RecipebookConfig',
     # CORS - konfiguracja cors tak, aby akceptował żądania z localhost:8081
     # cors, czyli inaczej cross-origin resource sharing, jest to mechanizm 
     # umożliwiający bezpieczną wymianę danych pomiędzy stronami
@@ -137,3 +137,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Konfiguracja Cors
+# --- jeśli true, to cors działa dla wszystkich domen, 
+#        whitelist nie jest wtedy potrzebna
+# --- jeśli false, to możliwe jest wtedy dla jakich domen
+#        cors będzie używany <--- tak jest w naszym przypadku
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8081',
+)
