@@ -56,7 +56,7 @@ urlpatterns = [
 # Views
 Utworzone widoki, które są używane powyżej.
 
-1. #### recipe_list
+1. ### recipe_list
 
 - dla metody get
 
@@ -66,13 +66,13 @@ Utworzone widoki, które są używane powyżej.
 
 ![](https://i.imgur.com/mgTQJqS.png)
 
-2. #### recipe_detail
+2. ### recipe_detail
 
 Zarządzanie przepisami, w tym wyświetlanie poszczególnych dodawanie czy usuwanie.
 
 ![](https://i.imgur.com/G7dmZeN.png)
 
-3. #### recipe_list_published 
+3. ### recipe_list_published 
 
 ![](https://i.imgur.com/IpxLtMl.png)
 
