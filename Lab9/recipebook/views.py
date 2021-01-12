@@ -24,7 +24,7 @@ def recipe_list(request):
         title = request.GET.get('title', None)
         # jeśli istnieje, filtruj po tytule
         if title is not None:
-            recipes = recipebook.filter(title__icontains=title)
+            recipes = recipes.filter(title__icontains=title)
         # wyświetl tylko te elementy wymienione w serializerze
         recipe_serializer = RecipeSerializer(recipes, many=True)
         return JsonResponse(recipe_serializer.data, safe=False)
