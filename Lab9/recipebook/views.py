@@ -83,6 +83,7 @@ def recipe_detail(request, pk):
         return JsonResponse({'message': 'Recipe was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
 
 # GET - wyświetl wszystkie dodane przepisy
+'''
 @api_view(['GET'])
 def recipe_list_published(request):
     recipes = Recipe.objects.filter(published=True)
@@ -90,3 +91,4 @@ def recipe_list_published(request):
     if request.method == 'GET': 
         recipe_serializer = RecipeSerializer(recipes, many=True)
         return JsonResponse(recipe_serializer.data, safe=False)
+        '''

@@ -80,10 +80,6 @@ Zarządzanie przepisami, w tym wyświetlanie poszczególnych dodawanie czy usuwa
 
 ![](https://i.imgur.com/G7dmZeN.png)
 
-3. ### recipe_list_published 
-
-![](https://i.imgur.com/IpxLtMl.png)
-
 # Frontend
 
 Dla frontendu istenieje plik .css modyfikujący nieco widok strony, natomiast w pasku nawigacji można dodawać nowy przepis czy przeglądać wszystkie. Do utworzenia tras został użyty Route, Switch oraz Link. Zaimportowane zostały również trzy komponenty odpowiadające za modyfikację przepisów, ich dodawanie czy usuwanie.
