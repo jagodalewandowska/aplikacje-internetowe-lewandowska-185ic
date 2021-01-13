@@ -70,6 +70,10 @@ Utworzone widoki, które są używane powyżej.
 
 ![](https://i.imgur.com/mgTQJqS.png)
 
+- dla metody delete
+
+![](https://i.imgur.com/dHYW2Zn.png)  
+
 2. ### recipe_detail
 
 Zarządzanie przepisami, w tym wyświetlanie poszczególnych dodawanie czy usuwanie.
@@ -178,6 +182,18 @@ Podczas wykonania "update" otrzymana zostaje również informacja o pomyślnej e
 Usuwanie przepisu na pierogi:
 
 ![](https://i.imgur.com/tpIpl3Q.gif)  
+
+### Usuwanie wszystkich przepisów
+
+![](https://i.imgur.com/Mfw8gda.gif)
+
+W konsoli:
+
+![](https://i.imgur.com/I4i3cjQ.png)
+
+Wszystkie przepisy zostały usunięte:
+
+![](https://i.imgur.com/kfY1FTm.png)
 
 
 ---
