@@ -143,6 +143,14 @@ Nowy przepis znajduje się na stronie:
 
 ![](https://i.imgur.com/7COCNIo.png)
 
+Wszystkie przepisy widoczne są również pod **localhost:8080/api/recipes/**.
+
+![](https://i.imgur.com/ZCTswjC.png)
+
+Id dodanego przepisu na Pigs in blankets to 7, go również można znaleźć pod adresem **localhost:8080/api/recipes/7**.
+
+![](https://i.imgur.com/YJmDhEH.png)
+
 ### Wyszukiwanie
 
 Chcąc go wyszukać wpisuję słowo **pigs** w pole wyszukiwania.
@@ -194,14 +202,3 @@ W konsoli:
 Wszystkie przepisy zostały usunięte:
 
 ![](https://i.imgur.com/kfY1FTm.png)
-
-
----
-
-Wszystkie przepisy widoczne są również pod **localhost:8080/api/recipes/**.
-
-![](https://i.imgur.com/ZCTswjC.png)
-
-Id dodanego przepisu na Pigs in blankets to 7, go również można znaleźć pod adresem **localhost:8080/api/recipes/7**.
-
-![](https://i.imgur.com/YJmDhEH.png)
