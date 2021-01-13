@@ -82,7 +82,7 @@ Zarządzanie przepisami, w tym wyświetlanie poszczególnych dodawanie czy usuwa
 
 # Frontend
 
-Dla frontendu istenieje plik .css modyfikujący nieco widok strony, natomiast w pasku nawigacji można dodawać nowy przepis czy przeglądać wszystkie. Do utworzenia tras został użyty Route, Switch oraz Link. Zaimportowane zostały również trzy komponenty.
+Dla frontendu istenieje plik .css modyfikujący nieco widok strony, natomiast w pasku nawigacji można dodawać nowy przepis czy przeglądać wszystkie. Do utworzenia tras został użyty Route, Switch oraz Link. Zaimportowane zostały również trzy komponenty odpowiadające za modyfikację przepisów, ich dodawanie czy usuwanie.
 ```
 import { Switch, Route, Link } from "react-router-dom";
 import AddRecipe from "./components/add-recipe.component";
@@ -137,7 +137,7 @@ Efekt po dodaniu:
 
 Nowy przepis znajduje się na stronie:
 
-![](https://i.imgur.com/2h3EvJS.png)
+![](https://i.imgur.com/7COCNIo.png)
 
 ### Wyszukiwanie
 
@@ -168,6 +168,10 @@ Jego status na stronie się zmienił, a także jego tytuł:
 Można go powtórnie zmienić na oczekujący:
 
 ![](https://i.imgur.com/vOHBGoZ.gif)
+
+Podczas wykonania "update" otrzymana zostaje również informacja o pomyślnej edycji:
+
+![](https://i.imgur.com/Volpiuh.png)
 
 ### Usuwanie przepisu
 
