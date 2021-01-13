@@ -94,30 +94,30 @@ export default class RecipesList extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Search by title"
+              placeholder="Type in the name of your recipe..."
               value={searchTitle}
               onChange={this.onChangeSearchTitle}
             />
             <div className="input-group-append">
               <button
-                className="btn btn-outline-secondary"
-                type="button"
+                className="btn btn-warning"
+                type="button"                
                 onClick={this.searchTitle}
               >
-                Search
+                <b className="colourme">Search your recipe!</b>
               </button>
             </div>
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Recipes List</h4>
+          <h4 className="colourme">Recipes</h4>
 
           <ul className="list-group">
             {Recipes &&
               Recipes.map((Recipe, index) => (
                 <li
                   className={
-                    "list-group-item " +
+                    "list-group-item list-group-item-warning" +
                     (index === currentIndex ? "active" : "")
                   }
                   onClick={() => this.setActiveRecipe(Recipe, index)}
@@ -137,38 +137,38 @@ export default class RecipesList extends Component {
         </div>
         <div className="col-md-6">
           {currentRecipe ? (
-            <div>
-              <h4>Recipe</h4>
+            <div className="colourme">
               <div>
-                <label>
-                  <strong>Title:</strong>
+                <label style={{color: '#FFEEBA'}}>
+                  <strong>Przepis na </strong>
                 </label>{" "}
                 {currentRecipe.title}
               </div>
-              <div>
-                <label>
-                  <strong>Description:</strong>
+              <div className="colourme">
+                <label style={{color: '#FFEEBA'}}>
+                  Opis:
                 </label>{" "}
                 {currentRecipe.description}
-              </div>
-              <div>
-                <label>
-                  <strong>Status:</strong>
+              </div><br/>
+              <div className="colourme">                
+                <label style={{color: '#FFEEBA'}}>
+                  Status:
                 </label>{" "}
-                {currentRecipe.published ? "Published" : "Pending"}
+                {currentRecipe.published ? "Opublikowany" : "Oczekujący"}
               </div>
 
               <Link
                 to={"/recipes/" + currentRecipe.id}
-                className="badge badge-warning"
+                className="badge badge-pill badge-warning"   
+                style={{color: 'white'}}             
               >
-                Edit
+                <h7>Edytuj status</h7>
               </Link>
             </div>
           ) : (
             <div>
               <br />
-              <p>Please click on a Recipe...</p>
+              <p className="colourme">Choose a recipe from the list, to see the details.</p>
             </div>
           )}
         </div>

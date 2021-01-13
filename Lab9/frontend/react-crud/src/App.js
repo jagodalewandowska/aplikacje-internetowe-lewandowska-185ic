@@ -6,15 +6,16 @@ import AddRecipe from "./components/add-recipe.component";
 import Recipe from "./components/recipe.component";
 import RecipeList from "./components/recipe-list.component";
 import './App.css';
+//import Header from './Header';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-dark">
           <a href="/recipes" className="navbar-brand">
             RecipeBook
-          </a>
+          </a>          
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/recipes"} className="nav-link">

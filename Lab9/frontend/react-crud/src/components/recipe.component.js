@@ -117,10 +117,10 @@ export default class Recipe extends Component {
     const { currentRecipe } = this.state;
 
     return (
-      <div>
+      <div className="colourme">
         {currentRecipe ? (
           <div className="edit-form">
-            <h4>Recipe</h4>
+            <h4>Przepis</h4>
             <form>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
@@ -133,7 +133,7 @@ export default class Recipe extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">Przygotowanie</label>
                 <input
                   type="text"
                   className="form-control"
@@ -147,7 +147,7 @@ export default class Recipe extends Component {
                 <label>
                   <strong>Status:</strong>
                 </label>
-                {currentRecipe.published ? "Published" : "Pending"}
+                {currentRecipe.published ? "Opublikowany" : "Oczekujący"}
               </div>
             </form>
 
