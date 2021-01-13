@@ -94,7 +94,7 @@ export default class Recipe extends Component {
       .then(response => {
         console.log(response.data);
         this.setState({
-          message: "The Recipe was updated successfully!"
+          message: "Zaaktualizowano pomyślnie!"
         });
       })
       .catch(e => {
@@ -156,14 +156,14 @@ export default class Recipe extends Component {
                 className="badge badge-primary mr-2"
                 onClick={() => this.updatePublished(false)}
               >
-                UnPublish
+                <h5>UnPublish</h5>
               </button>
             ) : (
               <button
                 className="badge badge-primary mr-2"
                 onClick={() => this.updatePublished(true)}
               >
-                Publish
+                <h5>Publish</h5>
               </button>
             )}
 
@@ -171,7 +171,7 @@ export default class Recipe extends Component {
               className="badge badge-danger mr-2"
               onClick={this.deleteRecipe}
             >
-              Delete
+              <h5>Delete</h5>
             </button>
 
             <button
@@ -179,14 +179,14 @@ export default class Recipe extends Component {
               className="badge badge-success"
               onClick={this.updateRecipe}
             >
-              Update
+              <h5>Update</h5>
             </button>
             <p>{this.state.message}</p>
           </div>
         ) : (
           <div>
             <br />
-            <p>Please click on a Recipe...</p>
+            <p>Choose one!</p>
           </div>
         )}
       </div>

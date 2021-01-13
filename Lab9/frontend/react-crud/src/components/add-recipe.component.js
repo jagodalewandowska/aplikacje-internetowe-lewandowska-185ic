@@ -69,16 +69,16 @@ export default class AddRecipe extends Component {
     return (
       <div className="submit-form">
         {this.state.submitted ? (
-          <div>
-            <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newRecipe}>
-              Add
+          <div className="colourme">
+            <h4>Wysłano poprawnie!</h4>
+            <button className="btn btn-warning" onClick={this.newRecipe}>
+              Dodaj
             </button>
           </div>
         ) : (
-          <div>
+          <div className="colourme">
             <div className="form-group">
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">Przepis na:</label>
               <input
                 type="text"
                 className="form-control"
@@ -91,7 +91,7 @@ export default class AddRecipe extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Sposób przygotowania:</label>
               <input
                 type="text"
                 className="form-control"
@@ -103,8 +103,8 @@ export default class AddRecipe extends Component {
               />
             </div>
 
-            <button onClick={this.saveRecipe} className="btn btn-success">
-              Submit
+            <button onClick={this.saveRecipe} className="btn btn-warning">
+              Dodaj
             </button>
           </div>
         )}

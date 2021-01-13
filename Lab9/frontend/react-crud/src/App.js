@@ -6,7 +6,6 @@ import AddRecipe from "./components/add-recipe.component";
 import Recipe from "./components/recipe.component";
 import RecipeList from "./components/recipe-list.component";
 import './App.css';
-//import Header from './Header';
 
 class App extends Component {
   render() {
@@ -19,12 +18,12 @@ class App extends Component {
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/recipes"} className="nav-link">
-                Recipes
+                Przepisy
               </Link>
             </li>
             <li className="nav-item">
               <Link to={"/add"} className="nav-link">
-                Add
+                Dodaj
               </Link>
             </li>
           </div>
