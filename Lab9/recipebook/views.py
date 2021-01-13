@@ -42,6 +42,11 @@ def recipe_list(request):
             return JsonResponse(recipe_serializer.data, status=status.HTTP_201_CREATED) 
         # jeśli zły wpis, to zwraca błąd oraz bad requests
         return JsonResponse(recipe_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # ----------- dla metody delete --------------------------------------
+    elif request.method == 'DELETE': 
+        count = Tutorial.objects.all().delete()
+        return JsonResponse({'message': '{} Recipes were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
  
  
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -75,11 +80,7 @@ def recipe_detail(request, pk):
     # usuwanie przepisu
     elif request.method == 'DELETE': 
         recipe.delete() 
-        return JsonResponse({'message': 'Recipe was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT) 
-
-        # delete all
-        # count = Tutorial.objects.all().delete()
-        # return JsonResponse({'message': '{} Tutorials were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse({'message': 'Recipe was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
 
 # GET - wyświetl wszystkie dodane przepisy
 @api_view(['GET'])
