@@ -136,7 +136,7 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-expand-sm bg-info navbar-dark">      
           <div className="navbar-nav">            
-            <a className="nav-link active" href="./index.html">Scheduler</a>
+            <a className="nav-link active" htef="/">Scheduler</a>
             <a className="nav-link" href="https://github.com/jagodalewandowska">Github</a>
           </div>
           <ul className="nav navbar-nav ml-auto" style = {{color: 'white'}}>
