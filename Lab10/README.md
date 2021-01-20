@@ -4,7 +4,19 @@
 ##### Wymagania dotyczące dziesiątego zadania:
 ####
 
-![alt text](https://i.imgur.com/Exgxj6K.png)  
+![alt text](https://i.imgur.com/Exgxj6K.png) 
+
+---
+
+### Spis treści:
+
+1. [Backend](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#backend)
+2. [Frontend](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#frontend)
+	- 	Wykorzystane [komponenty](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#komponenty)
+	- 	Completed/incompleted [tasks](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#completed-incompleted-tasks)
+	- 	Zarządzanie [postami](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#zarz%C4%85dzanie-postami)
+		- 	[dodawanie](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#dodawanie-posta)
+		- 	[usuwanie](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab10#usuwanie-posta)
 
 
 ---
@@ -12,7 +24,7 @@
 
 Zadaniem było stworzenie aplikacji typu todo. W projekcie django naszą aplikacją jest records - czyli wpisy, dlatego też w **models.py** zostaje utworzony nowy model Record z kilkoma dodatkowymi elementami (oprócz zmiany elementów wizualnych do aplikacji dodane jest również wyświetlanie dnia, czy zmienianie koloru w zależności czy czas na wykonanie minął).
 
-Utworzenie modelu wpisu, który zawiera:
+1. Utworzenie modelu wpisu, który zawiera:
 - **tytuł** - max. długość to 200
 - **opis** - jako pole tekstowe
 - **dodatkowe uwagi** - max. długość również do 200 - miejsce na dodatowy komentarz
@@ -21,11 +33,11 @@ Utworzenie modelu wpisu, który zawiera:
 
 ![](https://i.imgur.com/OGQ203n.png)
 
-W celu wyświetlania wpisów w profilu administratora dodanie klasy w pliku **admin.py**, która zawiera wszystkie elementy dodane do modelu wcześniej. 
+2. W celu wyświetlania wpisów w profilu administratora dodanie klasy w pliku **admin.py**, która zawiera wszystkie elementy dodane do modelu wcześniej. 
 
 ![](https://i.imgur.com/PZwD8Ph.png)
 
-Widok w panelu administratora:
+3. Widok w panelu administratora:
 
 ![](https://i.imgur.com/8AVWhhy.png)
 
@@ -189,3 +201,25 @@ Przy kliknięciu delete post znika:
 W konsoli również jest wyświetlone:
 
 ![](https://i.imgur.com/KeR0Ld2.png)
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
