@@ -109,10 +109,6 @@ Wynik wyświetlany jest na stronie ponad panelem z datą.
 
 ![](https://i.imgur.com/67pjQ5j.png)
 
-### Axios
-
-
-
 ### Completed, incompleted tasks
 
 Wciskając przycisk Completed task następuje wyświetlenie tych ukończonych. Zarówno dla Completed jak i incompleted sprawdzane jest, czy data, która została wyznaczona by dane zadanie ukończyć została przekroczona. Jeśli nie jest, wyświetlone zostaje na **zielono**:
@@ -141,10 +137,55 @@ if (now.getTime() <= then.getTime()) {
       return true;
     }
 ```
-Wywołuję je w funkcji **renderItems** następującym kodem, sprawdzającym te wartości.
+Wywołuję je w funkcji **renderItems** następującym kodem, sprawdzającym te wartości,
 ```
 {this.outDated(item) ? <b style={{color: 'red'}}>It's past the deadline: {item.date}</b>
             : <b style={{color: 'green'}}>Deadline: {item.date}</b>}
 ```
+w zależności od tego, który przycisk został wciśnięty (w większości przypadków na stronie wykorzystywany jest **bootstrap**).
 
+![](https://i.imgur.com/lLAdjYy.png)
 
+### Zarządzanie postami
+
+1. ##### Dodawanie posta
+
+W tym zadaniu wykorzystywany jest axios w którym za pomocą przypisanego id dodawany jest nowy wpis pod wskazany adres url:
+```
+...
+if (item.id) {
+      axios
+        .put(`http://localhost:8000/api/records/${item.id}/`, item)
+        .then(res => this.refreshList());
+      return;
+    }
+    ...
+```
+Na takiej samej zasadzie wyświetlane zostają posty znajdujące się pod url powyżej a także ich usuwanie. Dodanie nowego postu:
+
+![](https://i.imgur.com/ll03mp9.png)
+ 
+Po wysłaniu znajduje się on w Completed tasks, ponieważ zaznaczyłam checkbox *finished*.
+
+![](https://i.imgur.com/RkAouz6.png)
+
+Post można edytować, odznaczam *finished*.
+
+![](https://i.imgur.com/nJiXpSs.png)
+ 
+Zadanie *Clean the carpet* znajduje się w Incompleted tasks:
+
+![](https://i.imgur.com/WVMe7Xp.png)
+
+W konsoli:
+
+![](https://i.imgur.com/0AvW5w5.png)
+
+2. ##### Usuwanie posta
+
+Przy kliknięciu delete post znika:
+![](https://i.imgur.com/tYKo48q.png)
+
+W konsoli również jest wyświetlone:
+
+![](https://i.imgur.com/KeR0Ld2.png)
