@@ -10,7 +10,7 @@
 ---
 # Backend
 
-Zadaniem było stworzenie aplikacji typu todo. W projekcie django naszą aplikacją jest records - czyli wpisy, dlatego też w **models.py** zostaje utworzony nowy model Record.
+Zadaniem było stworzenie aplikacji typu todo. W projekcie django naszą aplikacją jest records - czyli wpisy, dlatego też w **models.py** zostaje utworzony nowy model Record z kilkoma dodatkowymi elementami (oprócz zmiany elementów wizualnych do aplikacji dodane jest również wyświetlanie dnia, czy zmienianie koloru w zależności czy czas na wykonanie minął).
 
 Utworzenie modelu wpisu, który zawiera:
 - **tytuł** - max. długość to 200
