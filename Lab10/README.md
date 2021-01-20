@@ -24,7 +24,7 @@
 
 Zadaniem było stworzenie aplikacji typu todo. W projekcie django naszą aplikacją jest records - czyli wpisy, dlatego też w **models.py** zostaje utworzony nowy model Record z kilkoma dodatkowymi elementami (oprócz zmiany elementów wizualnych do aplikacji dodane jest również wyświetlanie dnia, czy zmienianie koloru w zależności czy czas na wykonanie minął).
 
-1. Utworzenie modelu wpisu, który zawiera:
+Utworzenie modelu wpisu, który zawiera:
 - **tytuł** - max. długość to 200
 - **opis** - jako pole tekstowe
 - **dodatkowe uwagi** - max. długość również do 200 - miejsce na dodatowy komentarz
@@ -33,7 +33,7 @@ Zadaniem było stworzenie aplikacji typu todo. W projekcie django naszą aplikac
 
 ![](https://i.imgur.com/OGQ203n.png)
 
-2. W celu wyświetlania wpisów w profilu administratora dodanie klasy w pliku **admin.py**, która zawiera wszystkie elementy dodane do modelu wcześniej. 
+W celu wyświetlania wpisów w profilu administratora dodanie klasy w pliku **admin.py**, która zawiera wszystkie elementy dodane do modelu wcześniej. 
 
 ![](https://i.imgur.com/PZwD8Ph.png)
 
@@ -201,25 +201,3 @@ Przy kliknięciu delete post znika:
 W konsoli również jest wyświetlone:
 
 ![](https://i.imgur.com/KeR0Ld2.png)
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
