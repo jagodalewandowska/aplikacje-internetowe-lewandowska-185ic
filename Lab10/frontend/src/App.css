@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+body {
+  background-color: #e2e2e2;
+}
+
+nav {  
+  font-family: 'Bevan';  
+}
+
+h3 {
+  font-family: 'Amatic SC';
+  font-size: 50px;
+}
+
+h4 {
+  font-family: 'Bevan';
+  font-size: 30px;
+  color: #127A8C;
+  text-align: center;
+}
+
+.myHeader {
+  background-position: center;
+  height: 200px;
+  background-image: url(https://i.imgur.com/GQT1W43.png);
+}
+
+.typical {
+  font-size: 50px;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bevan';
+  color: #ffffff;
+  text-shadow: 2px 2px black; 
+}
+
+button {
+  text-align: center;  
+  font-size: 30px;
+  color: #127A8C;
+  font-family: 'Chewy';  
+}
+
+.card, .card-body {
+  margin: 2%;
+}
