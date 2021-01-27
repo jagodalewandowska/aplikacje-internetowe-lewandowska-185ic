@@ -157,7 +157,7 @@ Za pomocą modyfikacji w css co druga wiadomość ma inny kolor tła (nieparzyst
 
 # WebWorkers
 
-WebWrokers pozwalają na wykonywanie skryptów JavaScript w tle, równoległe do głównego wątku. Dzięki temu nie obciążają głównego interfejsu użytkownika. Podczas implementacji tworzony jest nowy obiekt Worker, a także utworzenie odbierania `onmessage` i wysyłania `postmessage` wiadomości między skryptem uruchomionym "w tle". Aby uruchomić WebWorkera należy utworzyć serwer, w moim przypadku za pomocą polecenia 
+WebWorkers pozwalają na wykonywanie skryptów JavaScript w tle, równoległe do głównego wątku. Dzięki temu nie obciążają głównego interfejsu użytkownika. Podczas implementacji tworzony jest nowy obiekt Worker, a także utworzenie odbierania `onmessage` i wysyłania `postmessage` wiadomości między skryptem uruchomionym "w tle". Aby uruchomić WebWorkera należy utworzyć serwer, w moim przypadku za pomocą polecenia 
 ```
 python -m http.server
 ```
