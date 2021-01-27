@@ -78,7 +78,7 @@ Funkcja startWorkerExp() wygląda bardzo podobnie do poprzedniej, tym razem wart
 
 Wzór na silnię to:
 ```
-											n!=1⋅2⋅3⋅...⋅(n−1)⋅n
+					n!=1⋅2⋅3⋅...⋅(n−1)⋅n
 ```
 
 Obliczanie silni to prosty kod zawierający pętlę. 
