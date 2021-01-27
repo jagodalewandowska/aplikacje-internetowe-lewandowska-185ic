@@ -11,6 +11,9 @@
 ### Spis treści:
 
 1. [Socket.io](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#socketio---czat)
+	- [index.js](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#indexjs)
+	- [chat.js](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#chatjs)
+	- [strona czatu](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#strona-czatu)
 2. [WebWorkers](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#webworkers)
 	- [Ciąg Fibonacciego](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#ci%C4%85g-fibonacciego)
 		- [Wykonywanie obliczeń](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#wykonywanie-oblicze%C5%84-na-stronie)
@@ -140,6 +143,8 @@ W jednym z okien loguję się swoim imieniem, w drugim zaraz zaloguję się jako
 
 Wpisując coś na czacie w oknie 'Jagoda' na drugim można zauważyć, że jest pisana wiadomość:
 
+![](https://i.imgur.com/PUOUVZX.png)
+
 ![](https://i.imgur.com/lpLujHM.png)
 
 Tak samo działa to w drugą stronę:
@@ -232,4 +237,4 @@ Obliczanie silni to prosty kod zawierający pętlę.
 
 4. Dla liczby ujemnej
 
-![](https://i.imgur.com/xJLVf2Z.png)
+![](https://i.imgur.com/xJLVf2Z.png) 
