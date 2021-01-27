@@ -1,6 +1,9 @@
 self.addEventListener("message", function(e) {
+  if(e.data === 0) {
+    postMessage(0);
+  }
   if(e.data > 0){
-    if (e.data === 1 || e.data === 0) {
+    if (e.data === 1) {
       postMessage(1);
     } else {
         let answer = 1;
