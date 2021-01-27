@@ -1,0 +1,9 @@
+.header {
+    background-position: center;
+    height: 200px; 
+    background-image: url(https://i.imgur.com/GQT1W43.png);
+    font-family:'Bevan';
+    text-align: center;
+    padding-top: 80px;
+    color: white;
+}
