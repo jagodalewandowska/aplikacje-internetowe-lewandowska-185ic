@@ -10,14 +10,66 @@
 
 ### Spis treści:
 
-1. [Socket.io]()
-2. [WebWorkers]()
+1. [Socket.io](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#socketio---czat)
+2. [WebWorkers](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#webworkers)
+	- [Ciąg Fibonacciego](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#ci%C4%85g-fibonacciego)
+		- [Wykonywanie obliczeń](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#wykonywanie-oblicze%C5%84-na-stronie)
+	- [Silnia](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#silnia)
+		- [Wykonywanie obliczeń](https://github.com/jagodalewandowska/aplikacje-internetowe-lewandowska-185ic/tree/main/Lab8#wykonywanie-oblicze%C5%84-na-stronie)
 
 ---
 
 # Socket.io - czat
 
-[...]
+Socket.IO jest biblioteką JavaScript dla aplikacji webowych. Pozwala na komunikację w czasie rzeczywistym między serwerem i klientami. Posiada dwie strony - klienta, która działa w przeglądarce oraz stronę serwerową dla Node.js. Mają bardzo zbliżone do siebie API.
+
+### index.js
+
+W pliku **index.js** definiowane są zmienne jak express, app, path, http, aby pozwolić na nawiązywanie połączenia. Importowane są pliki statyczne. Dodaną modyfikacją są nazwy użytkowników - dlatego na początku po wejściu na stronę domyślnie użytkownik nie jest 'zalogowany'.
+```
+let addedUser = false;
+```
+Tworzenie **nowego** użytkownika wraz ze zmianą statusu addedUser.
+```
+socket.on('add user', (username) => {
+  if (addedUser) return;
+  // Przypisanie nicku i zmiana statusu
+  socket.username = username;
+  addedUser = true;
+  socket.emit('login');
+});
+```
+Tworzenie **nowej wiadomości** wraz z przypisywaniem nicku za pomocą funkcji broadcast.
+```
+socket.on('chat message', (data) => {      
+  socket.broadcast.emit('chat message', {
+    username: socket.username,
+    message: data
+  });
+});
+```
+Aby możliwe było wyświetlanie informacji o tym, że któryś z użytkowników pisze wiadomość (is typing) dodany jest fragment kodu, przypisujący nick do osoby która pisze wiadomość.
+```
+socket.on('typing', () => {
+  socket.broadcast.emit('typing', {
+  	username: socket.username
+  });
+});
+```
+W przypadku kiedy osoba przestaje pisać wiadomość:
+```
+// Kiedy przestaje pisać dany użytkownik informacja znika
+    socket.on('stop typing', () => {
+      socket.broadcast.emit('stop typing', {
+        username: socket.username
+      });
+    });
+  });
+```
+
+### chat.js
+
+
 
 # WebWorkers
 
