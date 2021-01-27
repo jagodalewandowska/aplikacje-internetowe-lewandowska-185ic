@@ -17,6 +17,6 @@ self.addEventListener("message", function(e) {
       postMessage(arr);
     }      
   } else {
-    postMessage("Podaj liczbę większą od zera!");
+    postMessage("Podaj liczbę naturalną!");
   }
 }, false);
