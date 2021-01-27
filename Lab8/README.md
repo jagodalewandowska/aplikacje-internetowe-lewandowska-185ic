@@ -69,7 +69,86 @@ W przypadku kiedy osoba przestaje pisać wiadomość:
 
 ### chat.js
 
+Utworzenie stałych przechowujących dane takie jak username, wiadomości, strona loginu, czatu, definiowanie socketa. Na samym początku wartości connected oraz typing na `false`, które będą zmieniane w zależności od działania użytkownika dołączającego do czatu. W zdefiniowanej tablicy `COLORS` znajdują się kolory, które będą losowo generowane dla każdego użytkownika - jest to pula.
 
+![](https://i.imgur.com/pAqEIY0.png)
+
+Ustawianie nazwy użytkownika - jeśli dodany jest nowy nick, to strona logowania zostaje schowana, a wyświetla się okno czatu. Dodanie użytkownika.
+
+![](https://i.imgur.com/H9KeU8l.png)
+
+Losowy kolor dla użytkownika, tworzone za pomocą zmiennej hash, w której z puli kolorów zadeklarowanych wcześniej będą przypisywane kolory dla użytkownika.
+
+![](https://i.imgur.com/QnUumE3.png)
+
+Wysyłanie wiadomości na czacie:
+
+![](https://i.imgur.com/Rm1V3di.png)
+
+Funkcja `addChatMessage`, w której do listy poprzednich wiadomości dodawany jest w nowej linii wiadomość. Tak samo jeśli chodzi o informację o pisaniu wiadomości.
+
+![](https://i.imgur.com/6saRjQm.png)
+
+Dodawanie wiadomości wraz z elementem auto-scrollowania. W przypadku kiedy wiadomości wychodzą poza obszar dokumentu przesuwane są one do góry.
+
+![](https://i.imgur.com/8MArP2m.png)
+
+Wyświetlanie i usuwanie powiadomienia, że użytkownik pisze wiadomość.
+
+![](https://i.imgur.com/qi0L9aR.png)
+
+Zwracanie wiadomości o tym, kto pisze wiadomość w tym momencie.
+```
+const getTypingMessages = (data) => {
+      return $('.typing.message').filter(function (i) {
+        return $(this).data('username') === data.username;
+      });
+    }
+```
+
+W przypadku, kiedy użytkownik wciśnie przycisk enter wysyłana jest wiadomość - jeśli jest 'zalogowany'.
+![](https://i.imgur.com/xgEqWry.png)
+
+Pozostałe wywołania kodu konieczne do dodawania wiadomości, czy 'animacji' pisania. W przypadku zapisanego użytkownika jest to zmiana jego statusu na połączony - connected.
+```
+socket.on('login', (data) => {
+	connected = true;
+});
+
+socket.on('chat message', (data) => {
+	addChatMessage(data);
+});
+
+socket.on('typing', (data) => {
+	addChatTyping(data);
+});
+
+socket.on('stop typing', (data) => {
+	removeChatTyping(data);
+}); 
+```
+
+### Strona czatu
+
+Samo wyświetlanie strony znajduje się w pliku *index.html*. Zawiera on nagłówek jak i ekran wpisywania swojego nicku, po przejściu do czatu ten ekran jest 'chowany' a następnie wyświetlany jest 'chatArea'.
+
+![](https://i.imgur.com/RRgcvoP.png)
+
+W jednym z okien loguję się swoim imieniem, w drugim zaraz zaloguję się jako inny użytkownik.
+
+![](https://i.imgur.com/E19sQDx.png)
+
+Wpisując coś na czacie w oknie 'Jagoda' na drugim można zauważyć, że jest pisana wiadomość:
+
+![](https://i.imgur.com/lpLujHM.png)
+
+Tak samo działa to w drugą stronę:
+
+![](https://i.imgur.com/OB3vuCy.png)
+
+Za pomocą modyfikacji w css co druga wiadomość ma inny kolor tła (nieparzysta wiadomość). Animacja:
+
+![](https://i.imgur.com/gFSMZqz.gif)
 
 # WebWorkers
 
@@ -154,9 +233,3 @@ Obliczanie silni to prosty kod zawierający pętlę.
 4. Dla liczby ujemnej
 
 ![](https://i.imgur.com/xJLVf2Z.png)
-
- 
- 
- 
- 
- 
